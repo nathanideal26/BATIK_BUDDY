@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BATIK BUDDY | KRUSS MAKERS</title>
+    <!-- IMPORT FONT BERSENI (CINZEL DECORATIVE) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; user-select: none; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; user-select: none; }
         
         body { 
-            /* Latar Belakang Batik Overlay & Gradien Dark Cyan */
             background: 
                 radial-gradient(circle at center, rgba(4, 18, 26, 0.75) 0%, rgba(2, 8, 12, 0.95) 100%),
-                repeating-linear-gradient(45deg, rgba(56, 189, 248, 0.03) 0, rgba(56, 189, 248, 0.03) 15px, transparent 0, transparent 30px),
+                repeating-linear-gradient(45deg, rgba(234, 179, 8, 0.03) 0, rgba(234, 179, 8, 0.03) 15px, transparent 0, transparent 30px),
                 linear-gradient(135deg, #021019 0%, #082f49 50%, #020617 100%);
             color: #ffffff; 
             display: flex; 
@@ -23,11 +27,22 @@
             overflow: hidden;
         }
 
-        /* HEADER TOP */
+        /* HEADER TOP WITH GOLDEN GLOWING ARTISTIC FONT */
         .header { text-align: center; margin-top: 5px; }
-        .logo-title { font-size: 34px; font-weight: 900; letter-spacing: 10px; color: #ffffff; text-shadow: 0 0 15px rgba(56, 189, 248, 0.6); }
-        .logo-sub { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: #38bdf8; margin-top: 4px; }
-        .logo-desc { font-size: 10px; font-weight: 600; letter-spacing: 3px; color: #94a3b8; margin-top: 4px; }
+        .logo-title { 
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 36px; 
+            font-weight: 900; 
+            letter-spacing: 6px; 
+            color: #fef08a; 
+            text-shadow: 
+                0 0 10px #eab308,
+                0 0 20px #ca8a04,
+                0 0 30px rgba(234, 179, 8, 0.8),
+                0 0 40px rgba(234, 179, 8, 0.5);
+        }
+        .logo-sub { font-size: 11px; font-weight: 800; letter-spacing: 4px; color: #fde047; margin-top: 6px; text-shadow: 0 0 8px rgba(253, 224, 71, 0.5); }
+        .logo-desc { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: #94a3b8; margin-top: 4px; }
 
         /* CENTER TABLET FRAME WITH NEON GLOW */
         .tablet-container {
@@ -63,13 +78,13 @@
         }
 
         /* BADGE OVERLAY ON VIDEO */
-        .sleep-badge {
+        .status-badge {
             position: absolute;
             bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(56, 189, 248, 0.4);
+            border: 1px solid rgba(234, 179, 8, 0.5);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 10px;
@@ -86,16 +101,26 @@
         .dot-green {
             width: 8px;
             height: 8px;
-            background-color: #14b8a6;
+            background-color: #00ff88;
             border-radius: 50%;
-            box-shadow: 0 0 8px #14b8a6;
+            box-shadow: 0 0 8px #00ff88;
         }
 
-        /* INTERACTIVE BUTTON */
+        /* INTERACTIVE BUTTON & DIALOG */
         .btn-container {
             width: 100%;
             max-width: 480px;
             text-align: center;
+        }
+
+        .dialog-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fde047;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            line-height: 1.4;
+            text-shadow: 0 0 8px rgba(234, 179, 8, 0.4);
         }
 
         .touch-btn {
@@ -154,69 +179,87 @@
             flex-shrink: 0;
         }
 
-        .status-text {
-            display: flex;
-            flex-direction: column;
-        }
+        .status-title { font-size: 13px; font-weight: 800; letter-spacing: 2px; color: #ffffff; }
+        .status-desc { font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #f87171; margin-top: 2px; }
 
-        .status-title {
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #ffffff;
-        }
-
-        .status-desc {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #f87171;
-            margin-top: 2px;
-        }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <!-- HEADER TOP -->
+    <!-- HEADER TOP WITH GOLD GLOW -->
     <div class="header">
         <div class="logo-title">BATIK BUDDY</div>
         <div class="logo-sub">BY KRUSS MAKERS</div>
         <div class="logo-desc">YOUR BATIK MUSEUM GUIDE</div>
     </div>
 
-    <!-- TABLET DISPLAY WITH VIDEO -->
-    <div class="tablet-container">
-        <div class="video-wrapper">
-            <video id="sleepVid" autoplay loop muted playsinline>
-                <source src="video-sleep.mp4" type="video/mp4">
-            </video>
-            <div class="sleep-badge">
-                <span class="dot-green"></span>
-                BUDDY IS IN SLEEP MODE
+    <!-- PAPARAN 1: SLEEP MODE -->
+    <div id="screen1" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <div class="tablet-container">
+            <div class="video-wrapper">
+                <video id="sleepVid" autoplay loop muted playsinline>
+                    <source src="BATIK BUDDY SLEEP.mp4" type="video/mp4">
+                </video>
+                <div class="status-badge">
+                    <span class="dot-green" style="background-color: #eab308; box-shadow: 0 0 8px #eab308;"></span>
+                    BUDDY IS IN SLEEP MODE
+                </div>
             </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="touch-btn" onclick="goToWakeup()">
+                ✦ TOUCH HERE TO BEGIN TOUR
+            </button>
+            <div class="tap-sub">TAP TO WAKE BUDDY</div>
         </div>
     </div>
 
-    <!-- MAIN BUTTON -->
-    <div class="btn-container">
-        <button class="touch-btn" onclick="nextScreen()">
-            ✦ TOUCH HERE TO BEGIN TOUR
-        </button>
-        <div class="tap-sub">TAP TO WAKE BUDDY</div>
+    <!-- PAPARAN 2: WAKEUP MODE -->
+    <div id="screen2" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <div class="tablet-container">
+            <div class="video-wrapper">
+                <video id="wakeupVid" loop muted playsinline>
+                    <source src="BATIK BUDDY WAKEUP.mp4" type="video/mp4">
+                </video>
+                <div class="status-badge">
+                    <span class="dot-green"></span>
+                    BUDDY IS AWAKE
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <div class="dialog-text">“Hi! I'm Batik Buddy, your Batik Museum guide.”</div>
+            <button class="touch-btn" onclick="goToLanguage()">
+                CONTINUE TO SELECT LANGUAGE ➔
+            </button>
+        </div>
     </div>
 
-    <!-- CONNECTION BAR -->
+    <!-- BOTTOM CONNECTION BAR -->
     <div class="connection-bar">
         <div class="status-light"></div>
-        <div class="status-text">
+        <div>
             <div class="status-title">iPad ⇄ SPIKE PRIME</div>
             <div class="status-desc">NOT CONNECTED<br>SIMULATION MODE</div>
         </div>
     </div>
 
     <script>
-        function nextScreen() {
-            alert("Sedia untuk bina Paparan 2!");
+        function goToWakeup() {
+            document.getElementById('screen1').classList.add('hidden');
+            document.getElementById('sleepVid').pause();
+
+            document.getElementById('screen2').classList.remove('hidden');
+            let wVid = document.getElementById('wakeupVid');
+            wVid.currentTime = 0;
+            wVid.play();
+        }
+
+        function goToLanguage() {
+            alert("Sedia untuk bina Paparan 3 (Pilihan Bahasa)!");
         }
     </script>
 
