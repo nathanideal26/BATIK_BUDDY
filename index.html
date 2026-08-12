@@ -219,7 +219,7 @@
         <div class="logo-desc">YOUR BATIK MUSEUM GUIDE</div>
     </div>
 
-    <!-- PAPARAN 1: SLEEP MODE -->
+    <!-- PAPARAN 1: SLEEP MODE (Bisu untuk Autoplay) -->
     <div id="screen1" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
         <div class="tablet-container">
             <div class="video-wrapper">
@@ -241,11 +241,11 @@
         </div>
     </div>
 
-    <!-- PAPARAN 2: WAKEUP MODE -->
+    <!-- PAPARAN 2: WAKEUP MODE (Dengan Audio Aktif) -->
     <div id="screen2" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
         <div class="tablet-container">
             <div class="video-wrapper">
-                <video id="wakeupVid" loop muted playsinline>
+                <video id="wakeupVid" loop playsinline>
                     <source src="BATIK BUDDY WAKEUP.mp4" type="video/mp4">
                 </video>
                 <div class="status-badge">
@@ -282,13 +282,18 @@
 
             document.getElementById('screen2').classList.remove('hidden');
             let wVid = document.getElementById('wakeupVid');
+            wVid.muted = false; // Buka audio
             wVid.currentTime = 0;
-            wVid.play();
+            wVid.play().catch(function(error) {
+                console.log("Audio diblok oleh pelayar, cuba sekali lagi.");
+            });
         }
 
         function exitToSleep() {
             document.getElementById('screen2').classList.add('hidden');
-            document.getElementById('wakeupVid').pause();
+            let wVid = document.getElementById('wakeupVid');
+            wVid.pause();
+            wVid.muted = true;
 
             document.getElementById('screen1').classList.remove('hidden');
             let sVid = document.getElementById('sleepVid');
