@@ -106,7 +106,7 @@
             box-shadow: 0 0 8px #00ff88;
         }
 
-        /* INTERACTIVE BUTTON & DIALOG */
+        /* INTERACTIVE BUTTONS & DIALOG */
         .btn-container {
             width: 100%;
             max-width: 480px;
@@ -114,7 +114,7 @@
         }
 
         .dialog-text {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #fde047;
             margin-bottom: 12px;
@@ -143,6 +143,31 @@
         }
 
         .touch-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* BUTANG EXIT TOUR */
+        .exit-btn {
+            width: 100%;
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .exit-btn:active {
+            background: rgba(239, 68, 68, 0.3);
             transform: scale(0.98);
         }
 
@@ -235,6 +260,9 @@
             <button class="touch-btn" onclick="goToLanguage()">
                 CONTINUE TO SELECT LANGUAGE ➔
             </button>
+            <button class="exit-btn" onclick="exitToSleep()">
+                ✖ EXIT TOUR
+            </button>
         </div>
     </div>
 
@@ -256,6 +284,16 @@
             let wVid = document.getElementById('wakeupVid');
             wVid.currentTime = 0;
             wVid.play();
+        }
+
+        function exitToSleep() {
+            document.getElementById('screen2').classList.add('hidden');
+            document.getElementById('wakeupVid').pause();
+
+            document.getElementById('screen1').classList.remove('hidden');
+            let sVid = document.getElementById('sleepVid');
+            sVid.currentTime = 0;
+            sVid.play();
         }
 
         function goToLanguage() {
