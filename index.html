@@ -130,7 +130,7 @@
             font-size: 15px;
             font-weight: 800;
             letter-spacing: 2px;
-            padding: 16px;
+            padding: 15px;
             border-radius: 30px;
             border: none;
             cursor: pointer;
@@ -146,7 +146,7 @@
             transform: scale(0.98);
         }
 
-        /* BUTANG EXIT TOUR */
+        /* BUTANG EXIT / KAWALAN TAMBAHAN */
         .exit-btn {
             width: 100%;
             background: rgba(239, 68, 68, 0.15);
@@ -154,28 +154,78 @@
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 2px;
-            padding: 12px;
+            padding: 10px;
             border-radius: 20px;
             border: 1px solid rgba(239, 68, 68, 0.5);
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
             transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
         }
 
-        .exit-btn:active {
-            background: rgba(239, 68, 68, 0.3);
-            transform: scale(0.98);
+        .exit-btn:active { background: rgba(239, 68, 68, 0.3); transform: scale(0.98); }
+
+        /* GRID PILIHAN BAHASA */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 12px;
         }
+
+        .lang-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            padding: 14px;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-card:hover, .lang-card.active {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* BARIS NAVIGASI BAWAH (BACK, HOME, NEXT) */
+        .nav-row {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-back { background: rgba(255, 255, 255, 0.1); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .btn-home { background: rgba(234, 179, 8, 0.2); color: #fef08a; border: 1px solid rgba(234, 179, 8, 0.4); }
+        .btn-next { background: #38bdf8; color: #020617; box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); }
+
+        .nav-btn:active { transform: scale(0.97); }
 
         .tap-sub {
             font-size: 10px;
             letter-spacing: 3px;
             color: #94a3b8;
-            margin-top: 8px;
+            margin-top: 6px;
             font-weight: 600;
         }
 
@@ -186,26 +236,26 @@
             background: rgba(15, 23, 42, 0.7);
             border: 1.5px solid #ef4444;
             border-radius: 25px;
-            padding: 12px 20px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             gap: 15px;
             box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.2);
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             backdrop-filter: blur(5px);
         }
 
         .status-light {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             background: #ef4444;
             border-radius: 50%;
             box-shadow: 0 0 15px #ef4444;
             flex-shrink: 0;
         }
 
-        .status-title { font-size: 13px; font-weight: 800; letter-spacing: 2px; color: #ffffff; }
-        .status-desc { font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #f87171; margin-top: 2px; }
+        .status-title { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #ffffff; }
+        .status-desc { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #f87171; margin-top: 2px; }
 
         .hidden { display: none !important; }
     </style>
@@ -219,7 +269,7 @@
         <div class="logo-desc">YOUR BATIK MUSEUM GUIDE</div>
     </div>
 
-    <!-- PAPARAN 1: SLEEP MODE (Bisu untuk Autoplay) -->
+    <!-- PAPARAN 1: SLEEP MODE -->
     <div id="screen1" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
         <div class="tablet-container">
             <div class="video-wrapper">
@@ -234,14 +284,14 @@
         </div>
 
         <div class="btn-container">
-            <button class="touch-btn" onclick="goToWakeup()">
+            <button class="touch-btn" onclick="goToScreen(2)">
                 ✦ TOUCH HERE TO BEGIN TOUR
             </button>
             <div class="tap-sub">TAP TO WAKE BUDDY</div>
         </div>
     </div>
 
-    <!-- PAPARAN 2: WAKEUP MODE (Dengan Audio Aktif) -->
+    <!-- PAPARAN 2: WAKEUP MODE -->
     <div id="screen2" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
         <div class="tablet-container">
             <div class="video-wrapper">
@@ -257,12 +307,49 @@
 
         <div class="btn-container">
             <div class="dialog-text">“Hi! I'm Batik Buddy, your Batik Museum guide.”</div>
-            <button class="touch-btn" onclick="goToLanguage()">
+            <button class="touch-btn" onclick="goToScreen(3)">
                 CONTINUE TO SELECT LANGUAGE ➔
             </button>
-            <button class="exit-btn" onclick="exitToSleep()">
+            <button class="exit-btn" onclick="goToScreen(1)">
                 ✖ EXIT TOUR
             </button>
+        </div>
+    </div>
+
+    <!-- PAPARAN 3: PILIHAN BAHASA -->
+    <div id="screen3" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <div class="tablet-container" style="aspect-ratio: 21/9; min-height: 120px;">
+            <div style="text-align: center; padding: 10px;">
+                <h3 style="color: #fde047; font-size: 15px; margin-bottom: 5px;">PILIH BAHASA / SELECT LANGUAGE</h3>
+                <p style="font-size: 11px; color: #94a3b8;">Sila pilih bahasa interaksi pilihan anda</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <div class="lang-grid">
+                <div class="lang-card active" onclick="setLanguage('BM', this)">
+                    <span style="font-size: 24px;">🇲🇾</span>
+                    <span>Bahasa Melayu</span>
+                </div>
+                <div class="lang-card" onclick="setLanguage('EN', this)">
+                    <span style="font-size: 24px;">🇬🇧</span>
+                    <span>English</span>
+                </div>
+                <div class="lang-card" onclick="setLanguage('CN', this)">
+                    <span style="font-size: 24px;">🇨🇳</span>
+                    <span>中文 (Chinese)</span>
+                </div>
+                <div class="lang-card" onclick="setLanguage('TA', this)">
+                    <span style="font-size: 24px;">🇮🇳</span>
+                    <span>தமிழ் (Tamil)</span>
+                </div>
+            </div>
+
+            <div class="nav-row">
+                <button class="nav-btn btn-back" onclick="goToScreen(2)">⬅ BACK</button>
+                <button class="nav-btn btn-home" onclick="goToScreen(1)">🏠 HOME</button>
+                <button class="nav-btn btn-next" onclick="alert('Sedia untuk Paparan 4: Pilihan Destinasi!')">NEXT ➔</button>
+            </div>
         </div>
     </div>
 
@@ -276,33 +363,41 @@
     </div>
 
     <script>
-        function goToWakeup() {
+        let selectedLang = 'BM';
+
+        function goToScreen(screenNum) {
+            // Sembunyikan semua skrin
             document.getElementById('screen1').classList.add('hidden');
-            document.getElementById('sleepVid').pause();
-
-            document.getElementById('screen2').classList.remove('hidden');
-            let wVid = document.getElementById('wakeupVid');
-            wVid.muted = false; // Buka audio
-            wVid.currentTime = 0;
-            wVid.play().catch(function(error) {
-                console.log("Audio diblok oleh pelayar, cuba sekali lagi.");
-            });
-        }
-
-        function exitToSleep() {
             document.getElementById('screen2').classList.add('hidden');
-            let wVid = document.getElementById('wakeupVid');
-            wVid.pause();
-            wVid.muted = true;
+            document.getElementById('screen3').classList.add('hidden');
 
-            document.getElementById('screen1').classList.remove('hidden');
             let sVid = document.getElementById('sleepVid');
-            sVid.currentTime = 0;
-            sVid.play();
+            let wVid = document.getElementById('wakeupVid');
+
+            if (screenNum === 1) {
+                wVid.pause();
+                wVid.muted = true;
+                document.getElementById('screen1').classList.remove('hidden');
+                sVid.currentTime = 0;
+                sVid.play();
+            } else if (screenNum === 2) {
+                sVid.pause();
+                document.getElementById('screen2').classList.remove('hidden');
+                wVid.muted = false;
+                wVid.currentTime = 0;
+                wVid.play().catch(e => console.log(e));
+            } else if (screenNum === 3) {
+                sVid.pause();
+                wVid.pause();
+                document.getElementById('screen3').classList.remove('hidden');
+            }
         }
 
-        function goToLanguage() {
-            alert("Sedia untuk bina Paparan 3 (Pilihan Bahasa)!");
+        function setLanguage(lang, element) {
+            selectedLang = lang;
+            let cards = document.querySelectorAll('.lang-card');
+            cards.forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
         }
     </script>
 
