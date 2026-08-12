@@ -60,26 +60,6 @@
             margin: 10px 0;
         }
 
-        /* KOTAK ARAHAN YANG DIKECILKAN */
-        .lang-header-compact {
-            width: 100%;
-            max-width: 480px;
-            background: rgba(2, 6, 23, 0.8);
-            border-radius: 12px;
-            padding: 6px 12px;
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 5px 0 10px 0;
-        }
-
-        .robot-avatar {
-            font-size: 20px;
-            filter: drop-shadow(0 0 6px #38bdf8);
-        }
-
         .video-wrapper {
             width: 100%;
             height: 100%;
@@ -125,7 +105,7 @@
             box-shadow: 0 0 8px #00ff88;
         }
 
-        /* INTERACTIVE BUTTONS & DIALOG */
+        /* CONTAINER BUTANG */
         .btn-container {
             width: 100%;
             max-width: 480px;
@@ -180,13 +160,30 @@
 
         .exit-btn:active { background: rgba(239, 68, 68, 0.3); transform: scale(0.98); }
 
-        /* REKA BENTUK SENARAI BAHASA MENURUN (PAKSA SATO BARIS 1 PILIHAN) */
+        /* HEADER ARAHAN PAPARAN 3 & 4 */
+        .header-compact-box {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(2, 6, 23, 0.8);
+            border-radius: 12px;
+            padding: 6px 12px;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 4px 0 8px 0;
+        }
+
+        .robot-avatar { font-size: 18px; filter: drop-shadow(0 0 6px #38bdf8); }
+
+        /* SENARAI BAHASA MENURUN (PAPARAN 3) */
         .lang-list-vertical {
             display: flex !important;
             flex-direction: column !important;
             gap: 8px !important;
             width: 100% !important;
-            margin-bottom: 10px !important;
+            margin-bottom: 8px !important;
         }
 
         .lang-row-btn {
@@ -211,25 +208,74 @@
             box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
         }
 
-        .lang-left {
+        .lang-left { display: flex; align-items: center; gap: 12px; }
+
+        /* SENARAI STESEN STATIONS (PAPARAN 4) */
+        .stations-list {
             display: flex;
-            align-items: center;
-            gap: 12px;
+            flex-direction: column;
+            gap: 6px;
+            width: 100%;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 8px;
+            padding-right: 2px;
         }
 
-        /* BARIS NAVIGASI BAWAH (BACK, HOME, NEXT) */
+        .station-card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1.5px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .station-card:hover, .station-card:active {
+            border-color: #eab308;
+            background: rgba(234, 179, 8, 0.15);
+            transform: scale(0.99);
+        }
+
+        .station-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .station-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 12px;
+            color: #020617;
+            flex-shrink: 0;
+        }
+
+        .station-text-title { font-size: 13px; font-weight: 800; color: #ffffff; }
+        .station-text-sub { font-size: 9px; font-weight: 600; color: #94a3b8; }
+
+        /* NAVIGASI ROW */
         .nav-row {
             display: flex;
             gap: 8px;
             width: 100%;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         .nav-btn {
             flex: 1;
-            padding: 11px;
-            border-radius: 18px;
-            font-size: 12px;
+            padding: 10px;
+            border-radius: 16px;
+            font-size: 11px;
             font-weight: 800;
             letter-spacing: 1px;
             cursor: pointer;
@@ -239,17 +285,9 @@
 
         .btn-back { background: rgba(255, 255, 255, 0.1); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.2); }
         .btn-home { background: rgba(234, 179, 8, 0.2); color: #fef08a; border: 1px solid rgba(234, 179, 8, 0.4); }
-        .btn-next { background: #38bdf8; color: #020617; box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); }
+        .btn-next { background: #38bdf8; color: #020617; box-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
 
-        .nav-btn:active { transform: scale(0.97); }
-
-        .tap-sub {
-            font-size: 9px;
-            letter-spacing: 2px;
-            color: #94a3b8;
-            margin-top: 6px;
-            font-weight: 600;
-        }
+        .tap-sub { font-size: 9px; letter-spacing: 2px; color: #94a3b8; margin-top: 6px; font-weight: 600; }
 
         /* BOTTOM CONNECTION BAR */
         .connection-bar {
@@ -338,17 +376,14 @@
         </div>
     </div>
 
-    <!-- PAPARAN 3: PILIHAN BAHASA (100% MENURUN & COMPACT) -->
+    <!-- PAPARAN 3: PILIHAN BAHASA -->
     <div id="screen3" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-        
-        <!-- KOTAK HEADER ARAHAN RINGKAS -->
-        <div class="lang-header-compact">
+        <div class="header-compact-box">
             <span class="robot-avatar">🤖</span>
             <span style="color: #fde047; font-size: 11px; font-weight: 800; letter-spacing: 1px;">SILA PILIH BAHASA / SELECT LANGUAGE</span>
         </div>
 
         <div class="btn-container">
-            <!-- SENARAI MENURUN 1 BARIS 1 PILIHAN -->
             <div class="lang-list-vertical">
                 <div class="lang-row-btn active" onclick="setLanguage('BM', this)">
                     <div class="lang-left">
@@ -383,11 +418,88 @@
                 </div>
             </div>
 
-            <!-- BARIS NAVIGASI BAWAH -->
             <div class="nav-row">
                 <button class="nav-btn btn-back" onclick="goToScreen(2)">⬅ BACK</button>
                 <button class="nav-btn btn-home" onclick="goToScreen(1)">🏠 HOME</button>
-                <button class="nav-btn btn-next" onclick="alert('Sedia untuk Paparan 4: Pilihan Destinasi!')">NEXT ➔</button>
+                <button class="nav-btn btn-next" onclick="goToScreen(4)">NEXT ➔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAPARAN 4: PILIHAN STESEN (5 STATIONS TOUR MAP) -->
+    <div id="screen4" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <div class="header-compact-box">
+            <span class="robot-avatar">🗺️</span>
+            <span id="p4HeaderTitle" style="color: #fde047; font-size: 11px; font-weight: 800; letter-spacing: 1px;">PILIH DESTINASI GALERI</span>
+        </div>
+
+        <div class="btn-container">
+            <div class="stations-list">
+                <!-- STATION 1 -->
+                <div class="station-card" onclick="selectStation(1)">
+                    <div class="station-info">
+                        <div class="station-num" style="background: #eab308;">1</div>
+                        <div>
+                            <div class="station-text-title" id="s1Title">BATIK HERITAGE</div>
+                            <div class="station-text-sub" id="s1Sub">Terokai sejarah & asal usul batik</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 18px;">🏛️</span>
+                </div>
+
+                <!-- STATION 2 -->
+                <div class="station-card" onclick="selectStation(2)">
+                    <div class="station-info">
+                        <div class="station-num" style="background: #3b82f6;">2</div>
+                        <div>
+                            <div class="station-text-title" id="s2Title">BATIK MOTIFS</div>
+                            <div class="station-text-sub" id="s2Sub">Motif unik batik dan maksudnya</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 18px;">🌺</span>
+                </div>
+
+                <!-- STATION 3 -->
+                <div class="station-card" onclick="selectStation(3)">
+                    <div class="station-info">
+                        <div class="station-num" style="background: #22c55e;">3</div>
+                        <div>
+                            <div class="station-text-title" id="s3Title">CANTING & WAX</div>
+                            <div class="station-text-sub" id="s3Sub">Teknik mencanting dan penggunaan lilin</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 18px;">🖌️</span>
+                </div>
+
+                <!-- STATION 4 -->
+                <div class="station-card" onclick="selectStation(4)">
+                    <div class="station-info">
+                        <div class="station-num" style="background: #f97316;">4</div>
+                        <div>
+                            <div class="station-text-title" id="s4Title">COLOURING BATIK</div>
+                            <div class="station-text-sub" id="s4Sub">Proses mewarna batik langkah demi langkah</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 18px;">🎨</span>
+                </div>
+
+                <!-- STATION 5 -->
+                <div class="station-card" onclick="selectStation(5)">
+                    <div class="station-info">
+                        <div class="station-num" style="background: #ec4899;">5</div>
+                        <div>
+                            <div class="station-text-title" id="s5Title">BATIK GALLERY</div>
+                            <div class="station-text-sub" id="s5Sub">Koleksi hasil seni batik tradisional & moden</div>
+                        </div>
+                    </div>
+                    <span style="font-size: 18px;">👔</span>
+                </div>
+            </div>
+
+            <div class="nav-row">
+                <button class="nav-btn btn-back" onclick="goToScreen(3)">⬅ BACK</button>
+                <button class="nav-btn btn-home" onclick="goToScreen(1)">🏠 HOME</button>
+                <button class="nav-btn btn-next" onclick="alert('Sedia untuk Paparan 5: Penerangan Stesen!')">START TOUR ➔</button>
             </div>
         </div>
     </div>
@@ -404,10 +516,47 @@
     <script>
         let selectedLang = 'BM';
 
+        // KAMUS BAHASA UNTUK STESEN GALERI (PAPARAN 4)
+        const langData = {
+            BM: {
+                p4Header: "PILIH DESTINASI GALERI",
+                s1Title: "BATIK HERITAGE", s1Sub: "Sejarah, asal usul & evolusi batik",
+                s2Title: "BATIK MOTIFS", s2Sub: "Terokai motif unik batik & maksudnya",
+                s3Title: "CANTING & WAX", s3Sub: "Teknik mencanting & penggunaan lilin",
+                s4Title: "COLOURING BATIK", s4Sub: "Proses mewarna batik langkah demi langkah",
+                s5Title: "BATIK GALLERY", s5Sub: "Koleksi seni batik tradisional & moden"
+            },
+            EN: {
+                p4Header: "SELECT GALLERY DESTINATION",
+                s1Title: "BATIK HERITAGE", s1Sub: "History, origins & evolution of batik",
+                s2Title: "BATIK MOTIFS", s2Sub: "Explore unique motifs and their meanings",
+                s3Title: "CANTING & WAX", s3Sub: "How canting & wax create patterns",
+                s4Title: "COLOURING BATIK", s4Sub: "See how batik is coloured step by step",
+                s5Title: "BATIK GALLERY", s5Sub: "Stunning traditional & modern batik"
+            },
+            CN: {
+                p4Header: "选择蜡染展馆路线",
+                s1Title: "BATIK HERITAGE (传统历史)", s1Sub: "探索马来西亚蜡染的历史与起源",
+                s2Title: "BATIK MOTIFS (图案图案)", s2Sub: "了解独特蜡染图案及其寓意",
+                s3Title: "CANTING & WAX (蜡画工艺)", s3Sub: "学习如何使用蜡斗与蜡绘图",
+                s4Title: "COLOURING BATIK (蜡染上色)", s4Sub: "一步步了解蜡染染色过程",
+                s5Title: "BATIK GALLERY (蜡染画廊)", s5Sub: "欣赏精美传统与现代蜡染作品"
+            },
+            TA: {
+                p4Header: "கேலரி இலக்கைத் தேர்ந்தெடுக்கவும்",
+                s1Title: "BATIK HERITAGE (பாரம்பரியம்)", s1Sub: "பாட்டிக் கலையின் வரலாறு மற்றும் தோற்றம்",
+                s2Title: "BATIK MOTIFS (வடிவங்கள்)", s2Sub: "தனித்துவமான பாட்டிக் வடிவங்களின் பொருள்",
+                s3Title: "CANTING & WAX (மெழுகு வரைதல்)", s3Sub: "காண்டிங் மற்றும் மெழுகைப் பயன்படுத்தும் முறை",
+                s4Title: "COLOURING BATIK (வண்ணமிடுதல்)", s4Sub: "பாட்டிக் வண்ணமிடும் படிகளைப் பார்க்கவும்",
+                s5Title: "BATIK GALLERY (காட்சியகம்)", s5Sub: "பாரம்பரிய மற்றும் நவீன பாட்டிக் படைப்புகள்"
+            }
+        };
+
         function goToScreen(screenNum) {
             document.getElementById('screen1').classList.add('hidden');
             document.getElementById('screen2').classList.add('hidden');
             document.getElementById('screen3').classList.add('hidden');
+            document.getElementById('screen4').classList.add('hidden');
 
             let sVid = document.getElementById('sleepVid');
             let wVid = document.getElementById('wakeupVid');
@@ -428,6 +577,11 @@
                 sVid.pause();
                 wVid.pause();
                 document.getElementById('screen3').classList.remove('hidden');
+            } else if (screenNum === 4) {
+                sVid.pause();
+                wVid.pause();
+                updateScreen4Language();
+                document.getElementById('screen4').classList.remove('hidden');
             }
         }
 
@@ -442,6 +596,25 @@
             element.classList.add('active');
             let activeTag = element.querySelector('span:last-child');
             if(activeTag) activeTag.style.color = '#38bdf8';
+        }
+
+        function updateScreen4Language() {
+            const data = langData[selectedLang] || langData['BM'];
+            document.getElementById('p4HeaderTitle').innerText = data.p4Header;
+            document.getElementById('s1Title').innerText = data.s1Title;
+            document.getElementById('s1Sub').innerText = data.s1Sub;
+            document.getElementById('s2Title').innerText = data.s2Title;
+            document.getElementById('s2Sub').innerText = data.s2Sub;
+            document.getElementById('s3Title').innerText = data.s3Title;
+            document.getElementById('s3Sub').innerText = data.s3Sub;
+            document.getElementById('s4Title').innerText = data.s4Title;
+            document.getElementById('s4Sub').innerText = data.s4Sub;
+            document.getElementById('s5Title').innerText = data.s5Title;
+            document.getElementById('s5Sub').innerText = data.s5Sub;
+        }
+
+        function selectStation(num) {
+            alert('Stesen ' + num + ' dipilih. Sedia untuk Paparan 5!');
         }
     </script>
 
