@@ -61,6 +61,28 @@
             margin: 15px 0;
         }
 
+        /* KOTAK HEADER BAHASA YANG DIKECILKAN KETINGGIAN BORDERNYA */
+        .lang-header-box {
+            width: 100%;
+            max-width: 480px;
+            background: #020617;
+            border-radius: 20px;
+            padding: 12px 15px;
+            box-shadow: 0 0 20px #0284c7, inset 0 0 10px rgba(2, 132, 199, 0.4);
+            border: 2px solid #38bdf8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0 12px 0;
+        }
+
+        .robot-avatar {
+            font-size: 32px;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 0 10px #38bdf8);
+        }
+
         .video-wrapper {
             width: 100%;
             height: 100%;
@@ -318,29 +340,29 @@
 
     <!-- PAPARAN 3: PILIHAN BAHASA -->
     <div id="screen3" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-        <div class="tablet-container" style="aspect-ratio: 21/9; min-height: 120px;">
-            <div style="text-align: center; padding: 10px;">
-                <h3 style="color: #fde047; font-size: 15px; margin-bottom: 5px;">PILIH BAHASA / SELECT LANGUAGE</h3>
-                <p style="font-size: 11px; color: #94a3b8;">Sila pilih bahasa interaksi pilihan anda</p>
-            </div>
+        <!-- KOTAK BORDER LEBIH NIPIS DAN COMPACT DENGAN AVATAR ROBOT -->
+        <div class="lang-header-box">
+            <div class="robot-avatar">🤖</div>
+            <h3 style="color: #fde047; font-size: 14px; margin-bottom: 3px; font-weight: 800; letter-spacing: 1px;">PILIH BAHASA / SELECT LANGUAGE</h3>
+            <p style="font-size: 10px; color: #94a3b8; font-weight: 600;">Sila pilih bahasa interaksi pilihan anda</p>
         </div>
 
         <div class="btn-container">
             <div class="lang-grid">
                 <div class="lang-card active" onclick="setLanguage('BM', this)">
-                    <span style="font-size: 24px;">🇲🇾</span>
+                    <span style="font-size: 20px;">🇲🇾</span>
                     <span>Bahasa Melayu</span>
                 </div>
                 <div class="lang-card" onclick="setLanguage('EN', this)">
-                    <span style="font-size: 24px;">🇬🇧</span>
+                    <span style="font-size: 20px;">🇬🇧</span>
                     <span>English</span>
                 </div>
                 <div class="lang-card" onclick="setLanguage('CN', this)">
-                    <span style="font-size: 24px;">🇨🇳</span>
+                    <span style="font-size: 20px;">🇨🇳</span>
                     <span>中文 (Chinese)</span>
                 </div>
                 <div class="lang-card" onclick="setLanguage('TA', this)">
-                    <span style="font-size: 24px;">🇮🇳</span>
+                    <span style="font-size: 20px;">🇮🇳</span>
                     <span>தமிழ் (Tamil)</span>
                 </div>
             </div>
@@ -366,7 +388,6 @@
         let selectedLang = 'BM';
 
         function goToScreen(screenNum) {
-            // Sembunyikan semua skrin
             document.getElementById('screen1').classList.add('hidden');
             document.getElementById('screen2').classList.add('hidden');
             document.getElementById('screen3').classList.add('hidden');
