@@ -60,7 +60,7 @@
             margin: 10px 0;
         }
 
-        /* KOTAK ARAHAN DIKECILKAN UNTUK MENGUTAMAKAN PILIHAN BAHASA */
+        /* KOTAK ARAHAN YANG DIKECILKAN */
         .lang-header-compact {
             width: 100%;
             max-width: 480px;
@@ -180,41 +180,41 @@
 
         .exit-btn:active { background: rgba(239, 68, 68, 0.3); transform: scale(0.98); }
 
-        /* SENARAI PILIHAN BAHASA MENURUN (VERTIKAL & JELAS) */
-        .lang-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            width: 100%;
-            margin-bottom: 10px;
+        /* REKA BENTUK SENARAI BAHASA MENURUN (PAKSA SATO BARIS 1 PILIHAN) */
+        .lang-list-vertical {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            width: 100% !important;
+            margin-bottom: 10px !important;
         }
 
-        .lang-card {
+        .lang-row-btn {
+            width: 100% !important;
             background: rgba(15, 23, 42, 0.9);
             border: 1.5px solid rgba(56, 189, 248, 0.3);
-            border-radius: 14px;
+            border-radius: 12px;
             padding: 10px 16px;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
             transition: all 0.2s ease;
         }
 
-        .lang-card-left {
+        .lang-row-btn.active, .lang-row-btn:hover {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+        }
+
+        .lang-left {
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-
-        .lang-card:hover, .lang-card.active {
-            border-color: #38bdf8;
-            background: rgba(56, 189, 248, 0.25);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-            transform: translateX(4px);
         }
 
         /* BARIS NAVIGASI BAWAH (BACK, HOME, NEXT) */
@@ -338,47 +338,48 @@
         </div>
     </div>
 
-    <!-- PAPARAN 3: PILIHAN BAHASA (MENURUN & DIOPTIMUMKAN) -->
+    <!-- PAPARAN 3: PILIHAN BAHASA (100% MENURUN & COMPACT) -->
     <div id="screen3" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-        <!-- KOTAK ARAHAN DIKECILKAN UNTUK HIGHLIGHT BAHASA -->
+        
+        <!-- KOTAK HEADER ARAHAN RINGKAS -->
         <div class="lang-header-compact">
             <span class="robot-avatar">🤖</span>
             <span style="color: #fde047; font-size: 11px; font-weight: 800; letter-spacing: 1px;">SILA PILIH BAHASA / SELECT LANGUAGE</span>
         </div>
 
         <div class="btn-container">
-            <!-- SENARAI PILIHAN BAHASA MENURUN (1 BARIS 1 PILIHAN) -->
-            <div class="lang-list">
-                <div class="lang-card active" onclick="setLanguage('BM', this)">
-                    <div class="lang-card-left">
-                        <span style="font-size: 22px;">🇲🇾</span>
+            <!-- SENARAI MENURUN 1 BARIS 1 PILIHAN -->
+            <div class="lang-list-vertical">
+                <div class="lang-row-btn active" onclick="setLanguage('BM', this)">
+                    <div class="lang-left">
+                        <span style="font-size: 20px;">🇲🇾</span>
                         <span>Bahasa Melayu</span>
                     </div>
-                    <span style="font-size: 11px; color: #38bdf8; font-weight: 800;">[MY]</span>
+                    <span style="font-size: 11px; color: #38bdf8; font-weight: 800;">MY</span>
                 </div>
 
-                <div class="lang-card" onclick="setLanguage('EN', this)">
-                    <div class="lang-card-left">
-                        <span style="font-size: 22px;">🇬🇧</span>
+                <div class="lang-row-btn" onclick="setLanguage('EN', this)">
+                    <div class="lang-left">
+                        <span style="font-size: 20px;">🇬🇧</span>
                         <span>English</span>
                     </div>
-                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">[GB]</span>
+                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">GB</span>
                 </div>
 
-                <div class="lang-card" onclick="setLanguage('CN', this)">
-                    <div class="lang-card-left">
-                        <span style="font-size: 22px;">🇨🇳</span>
+                <div class="lang-row-btn" onclick="setLanguage('CN', this)">
+                    <div class="lang-left">
+                        <span style="font-size: 20px;">🇨🇳</span>
                         <span>中文 (Chinese)</span>
                     </div>
-                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">[CN]</span>
+                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">CN</span>
                 </div>
 
-                <div class="lang-card" onclick="setLanguage('TA', this)">
-                    <div class="lang-card-left">
-                        <span style="font-size: 22px;">🇮🇳</span>
+                <div class="lang-row-btn" onclick="setLanguage('TA', this)">
+                    <div class="lang-left">
+                        <span style="font-size: 20px;">🇮🇳</span>
                         <span>தமிழ் (Tamil)</span>
                     </div>
-                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">[IN]</span>
+                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">IN</span>
                 </div>
             </div>
 
@@ -432,10 +433,10 @@
 
         function setLanguage(lang, element) {
             selectedLang = lang;
-            let cards = document.querySelectorAll('.lang-card');
-            cards.forEach(c => {
-                c.classList.remove('active');
-                let tag = c.querySelector('span:last-child');
+            let rows = document.querySelectorAll('.lang-row-btn');
+            rows.forEach(r => {
+                r.classList.remove('active');
+                let tag = r.querySelector('span:last-child');
                 if(tag) tag.style.color = '#94a3b8';
             });
             element.classList.add('active');
