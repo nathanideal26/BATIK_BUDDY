@@ -22,22 +22,22 @@
             justify-content: space-between; 
             align-items: center; 
             min-height: 100dvh; 
-            padding: clamp(8px, 1.5vh, 16px) clamp(10px, 2vw, 24px);
+            padding: 10px 14px;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* FULLSCREEN BUTTON */
+        /* BUTANG FULLSCREEN */
         .fullscreen-btn {
             position: absolute;
             top: 10px;
-            right: 15px;
+            right: 12px;
             background: rgba(15, 23, 42, 0.8);
             border: 1px solid rgba(56, 189, 248, 0.5);
             color: #38bdf8;
             border-radius: 8px;
             padding: 5px 10px;
-            font-size: clamp(10px, 1.1vw, 12px);
+            font-size: 11px;
             font-weight: 800;
             cursor: pointer;
             z-index: 99;
@@ -45,39 +45,39 @@
         }
 
         /* HEADER */
-        .header { text-align: center; width: 100%; flex-shrink: 0; }
+        .header { text-align: center; width: 100%; margin-top: 2px; }
         .logo-title { 
             font-family: 'Cinzel Decorative', serif;
-            font-size: clamp(22px, 3.5vw, 36px); 
+            font-size: clamp(26px, 4vw, 36px); 
             font-weight: 900; 
-            letter-spacing: clamp(2px, 0.6vw, 5px); 
+            letter-spacing: 4px; 
             color: #fef08a; 
             text-shadow: 0 0 12px #eab308, 0 0 25px #ca8a04;
         }
-        .logo-sub { font-size: clamp(8px, 1.1vw, 12px); font-weight: 800; letter-spacing: 2.5px; color: #fde047; margin-top: 1px; }
-        .logo-desc { font-size: clamp(7px, 0.9vw, 10px); font-weight: 700; letter-spacing: 2px; color: #94a3b8; margin-top: 1px; }
+        .logo-sub { font-size: 10px; font-weight: 800; letter-spacing: 3px; color: #fde047; margin-top: 2px; }
+        .logo-desc { font-size: 8.5px; font-weight: 700; letter-spacing: 2px; color: #94a3b8; margin-top: 1px; }
 
-        /* KANDUNGAN UTAMA (PORTRAIT DEFAULT) */
+        /* KANDUNGAN UTAMA MENURUN (100% TEGAK KEKAL) */
         .screen-content {
             width: 100%;
-            max-width: 960px;
+            max-width: 540px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: clamp(8px, 1.5vh, 15px);
+            gap: 10px;
             flex: 1;
             justify-content: center;
             margin: auto 0;
             padding: 4px 0;
         }
 
-        /* TABLET & VIDEO FRAME */
+        /* FRAME TABLET / VIDEO */
         .tablet-container {
             width: 100%;
             aspect-ratio: 16/9;
-            max-height: clamp(170px, 38vh, 360px);
+            max-height: 260px;
             background: #020617;
-            border-radius: clamp(12px, 1.8vw, 20px);
+            border-radius: 16px;
             padding: 6px;
             box-shadow: 0 0 25px #0284c7, inset 0 0 12px rgba(2, 132, 199, 0.5);
             border: 2px solid #38bdf8;
@@ -90,7 +90,7 @@
         .video-wrapper {
             width: 100%;
             height: 100%;
-            border-radius: clamp(10px, 1.4vw, 16px);
+            border-radius: 12px;
             overflow: hidden;
             position: relative;
             background: #000;
@@ -100,14 +100,14 @@
 
         .status-badge {
             position: absolute;
-            bottom: clamp(6px, 1vh, 12px);
+            bottom: 8px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(15, 23, 42, 0.9);
             border: 1.5px solid rgba(234, 179, 8, 0.6);
-            padding: clamp(3px, 0.8vh, 6px) clamp(10px, 1.5vw, 16px);
+            padding: 4px 14px;
             border-radius: 20px;
-            font-size: clamp(8.5px, 1.1vw, 12px);
+            font-size: 10px;
             font-weight: 800;
             letter-spacing: 1.5px;
             color: #ffffff;
@@ -118,16 +118,16 @@
             white-space: nowrap;
         }
 
-        .dot-green { width: clamp(6px, 0.8vw, 8px); height: clamp(6px, 0.8vw, 8px); background-color: #00ff88; border-radius: 50%; box-shadow: 0 0 8px #00ff88; }
+        .dot-green { width: 8px; height: 8px; background-color: #00ff88; border-radius: 50%; box-shadow: 0 0 8px #00ff88; }
 
-        /* BUTANG & TEKS INTERAKTIF */
+        /* BUTANG INTERAKTIF */
         .btn-container { width: 100%; text-align: center; }
 
         .dialog-text {
-            font-size: clamp(12px, 1.6vw, 16px);
+            font-size: 14px;
             font-weight: 800;
             color: #fde047;
-            margin-bottom: clamp(6px, 1vh, 10px);
+            margin-bottom: 8px;
             letter-spacing: 1px;
             text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
         }
@@ -136,11 +136,11 @@
             width: 100%;
             background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 100%);
             color: #020617;
-            font-size: clamp(12px, 1.5vw, 16px);
+            font-size: 14px;
             font-weight: 900;
             letter-spacing: 2px;
-            padding: clamp(10px, 1.5vh, 15px);
-            border-radius: 20px;
+            padding: 14px;
+            border-radius: 22px;
             border: none;
             cursor: pointer;
             box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
@@ -157,41 +157,42 @@
             width: 100%;
             background: rgba(239, 68, 68, 0.2);
             color: #fca5a5;
-            font-size: clamp(10px, 1.2vw, 13px);
+            font-size: 11px;
             font-weight: 800;
             letter-spacing: 1.5px;
-            padding: clamp(8px, 1.2vh, 11px);
+            padding: 10px;
             border-radius: 16px;
             border: 1.5px solid rgba(239, 68, 68, 0.5);
             cursor: pointer;
-            margin-top: clamp(6px, 0.8vh, 8px);
+            margin-top: 8px;
         }
 
         .header-compact-box {
             width: 100%;
             background: rgba(2, 6, 23, 0.85);
             border-radius: 12px;
-            padding: clamp(6px, 1vh, 10px) clamp(10px, 1.5vw, 14px);
+            padding: 8px 14px;
             border: 1.5px solid rgba(56, 189, 248, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            margin-bottom: 2px;
         }
 
-        .robot-avatar { font-size: clamp(16px, 2vw, 20px); filter: drop-shadow(0 0 6px #38bdf8); }
+        .robot-avatar { font-size: 18px; filter: drop-shadow(0 0 6px #38bdf8); }
 
-        /* SENARAI BAHASA */
-        .lang-list-vertical { display: flex !important; flex-direction: column !important; gap: clamp(6px, 1vh, 8px) !important; width: 100% !important; }
+        /* SENARAI BAHASA MENURUN (1 BARIS 1 PILIHAN) */
+        .lang-list-vertical { display: flex !important; flex-direction: column !important; gap: 8px !important; width: 100% !important; }
 
         .lang-row-btn {
             width: 100% !important;
             background: rgba(15, 23, 42, 0.9);
             border: 1.5px solid rgba(56, 189, 248, 0.3);
             border-radius: 12px;
-            padding: clamp(8px, 1.2vh, 12px) clamp(12px, 1.8vw, 16px);
+            padding: 11px 16px;
             color: white;
-            font-size: clamp(12px, 1.4vw, 15px);
+            font-size: 14px;
             font-weight: 800;
             cursor: pointer;
             display: flex !important;
@@ -203,14 +204,14 @@
         .lang-row-btn.active, .lang-row-btn:hover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.3); box-shadow: 0 0 14px rgba(56, 189, 248, 0.5); }
         .lang-left { display: flex; align-items: center; gap: 10px; }
 
-        /* SENARAI STESEN */
-        .stations-list { display: flex; flex-direction: column; gap: clamp(5px, 0.8vh, 7px); width: 100%; max-height: clamp(200px, 42vh, 380px); overflow-y: auto; }
+        /* SENARAI 5 STESEN MENURUN */
+        .stations-list { display: flex; flex-direction: column; gap: 6px; width: 100%; max-height: 48vh; overflow-y: auto; }
 
         .station-card {
             background: rgba(15, 23, 42, 0.9);
             border: 1.5px solid rgba(56, 189, 248, 0.3);
             border-radius: 12px;
-            padding: clamp(7px, 1vh, 10px) clamp(10px, 1.5vw, 14px);
+            padding: 9px 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -222,19 +223,19 @@
         .station-info { display: flex; align-items: center; gap: 10px; text-align: left; }
 
         .station-num {
-            width: clamp(24px, 3vw, 28px); height: clamp(24px, 3vw, 28px); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: clamp(10px, 1.2vw, 12px); color: #020617; flex-shrink: 0;
+            width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 11px; color: #020617; flex-shrink: 0;
         }
 
-        .station-text-title { font-size: clamp(11.5px, 1.3vw, 14px); font-weight: 900; color: #ffffff; }
-        .station-text-sub { font-size: clamp(8.5px, 1vw, 11px); font-weight: 600; color: #94a3b8; }
+        .station-text-title { font-size: 13px; font-weight: 900; color: #ffffff; }
+        .station-text-sub { font-size: 9px; font-weight: 600; color: #94a3b8; }
 
-        /* DETAIL STESEN DENGAN RUANGAN AI */
+        /* DETAIL STESEN DENGAN SUSUNAN MENEGAK */
         .station-detail-card {
             width: 100%;
             background: rgba(15, 23, 42, 0.95);
             border: 2px solid #38bdf8;
             border-radius: 16px;
-            padding: clamp(8px, 1.2vh, 12px);
+            padding: 10px;
             box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
             display: flex;
             flex-direction: column;
@@ -244,7 +245,7 @@
 
         .station-img-box {
             width: 100%;
-            height: clamp(90px, 15vh, 140px);
+            height: 120px;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(56, 189, 248, 0.4);
@@ -257,26 +258,26 @@
         .station-img-box svg { width: 100%; height: 100%; }
 
         .station-desc-text {
-            font-size: clamp(10.5px, 1.2vw, 12.5px);
-            line-height: 1.4;
+            font-size: 11px;
+            line-height: 1.45;
             color: #e2e8f0;
             text-align: justify;
             background: rgba(2, 6, 23, 0.8);
-            padding: clamp(6px, 1vh, 10px);
+            padding: 8px 10px;
             border-radius: 8px;
             border-left: 3px solid #fde047;
             width: 100%;
-            max-height: clamp(65px, 12vh, 100px);
+            max-height: 90px;
             overflow-y: auto;
         }
 
-        /* BAHAGIAN KOTAK PERTANYAAN AI */
+        /* RUANGAN PERTANYAAN AI */
         .ai-qa-box {
             width: 100%;
             background: rgba(2, 6, 23, 0.9);
             border: 1.5px solid rgba(234, 179, 8, 0.6);
             border-radius: 12px;
-            padding: 8px 12px;
+            padding: 8px;
             display: flex;
             flex-direction: column;
             gap: 6px;
@@ -286,7 +287,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: clamp(10px, 1.2vw, 12px);
+            font-size: 11px;
             font-weight: 800;
             color: #fde047;
             letter-spacing: 1px;
@@ -294,7 +295,7 @@
 
         .ai-prompt-chips {
             display: flex;
-            gap: 6px;
+            gap: 5px;
             overflow-x: auto;
             padding-bottom: 2px;
         }
@@ -305,7 +306,7 @@
             color: #7dd3fc;
             padding: 3px 8px;
             border-radius: 12px;
-            font-size: clamp(8.5px, 1vw, 10.5px);
+            font-size: 9.5px;
             font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
@@ -327,7 +328,7 @@
             border-radius: 8px;
             padding: 6px 10px;
             color: #ffffff;
-            font-size: clamp(10px, 1.1vw, 12px);
+            font-size: 11px;
             font-weight: 600;
             outline: none;
             user-select: text !important;
@@ -340,35 +341,32 @@
             border: none;
             color: #020617;
             border-radius: 8px;
-            padding: 6px 12px;
-            font-size: clamp(10px, 1.1vw, 12px);
+            padding: 6px 10px;
+            font-size: 11px;
             font-weight: 900;
             cursor: pointer;
-            transition: all 0.2s ease;
         }
-
-        .ai-send-btn:active { transform: scale(0.96); }
 
         .ai-answer-box {
             background: rgba(15, 23, 42, 0.95);
             border: 1px solid rgba(56, 189, 248, 0.5);
             border-radius: 8px;
-            padding: 8px;
-            font-size: clamp(10px, 1.1vw, 12px);
+            padding: 6px 8px;
+            font-size: 10.5px;
             line-height: 1.4;
             color: #93c5fd;
             display: none;
-            max-height: 80px;
+            max-height: 70px;
             overflow-y: auto;
         }
 
-        .controls-group { display: flex; gap: 8px; width: 100%; }
+        .controls-group { display: flex; gap: 6px; width: 100%; }
 
         .audio-btn, .web-btn {
             flex: 1;
-            padding: clamp(7px, 1vh, 10px);
+            padding: 8px;
             border-radius: 12px;
-            font-size: clamp(9.5px, 1.1vw, 12px);
+            font-size: 11px;
             font-weight: 800;
             cursor: pointer;
             display: flex;
@@ -384,57 +382,36 @@
         .nav-row { display: flex; gap: 8px; width: 100%; }
 
         .nav-btn {
-            flex: 1; padding: clamp(8px, 1.2vh, 12px); border-radius: 14px; font-size: clamp(10px, 1.2vw, 13px); font-weight: 900; letter-spacing: 1px; cursor: pointer; border: none; transition: all 0.2s ease;
+            flex: 1; padding: 10px; border-radius: 14px; font-size: 11px; font-weight: 900; letter-spacing: 1px; cursor: pointer; border: none; transition: all 0.2s ease;
         }
 
         .btn-back { background: rgba(255, 255, 255, 0.12); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.25); }
         .btn-home { background: rgba(234, 179, 8, 0.25); color: #fef08a; border: 1.5px solid rgba(234, 179, 8, 0.5); }
 
-        .tap-sub { font-size: clamp(8px, 0.9vw, 10px); letter-spacing: 2px; color: #94a3b8; margin-top: 4px; font-weight: 700; }
+        .tap-sub { font-size: 9px; letter-spacing: 2px; color: #94a3b8; margin-top: 4px; font-weight: 700; }
 
         /* BOTTOM CONNECTION BAR */
         .connection-bar {
             width: 100%;
-            max-width: 960px;
+            max-width: 540px;
             background: rgba(15, 23, 42, 0.85);
             border: 1.5px solid #ef4444;
             border-radius: 16px;
-            padding: clamp(5px, 0.8vh, 8px) clamp(10px, 1.5vw, 16px);
+            padding: 6px 14px;
             display: flex;
             align-items: center;
             gap: 10px;
             box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.3);
             backdrop-filter: blur(6px);
             cursor: pointer;
-            flex-shrink: 0;
             margin-top: 2px;
         }
 
-        .status-light { width: clamp(10px, 1.2vw, 14px); height: clamp(10px, 1.2vw, 14px); background: #ef4444; border-radius: 50%; box-shadow: 0 0 8px #ef4444; flex-shrink: 0; }
-        .status-title { font-size: clamp(9.5px, 1.1vw, 12px); font-weight: 900; letter-spacing: 1.5px; color: #ffffff; }
-        .status-desc { font-size: clamp(7.5px, 0.9vw, 9.5px); font-weight: 800; letter-spacing: 1px; color: #f87171; margin-top: 1px; }
+        .status-light { width: 12px; height: 12px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 8px #ef4444; flex-shrink: 0; }
+        .status-title { font-size: 11px; font-weight: 900; letter-spacing: 1.5px; color: #ffffff; }
+        .status-desc { font-size: 8px; font-weight: 800; letter-spacing: 1px; color: #f87171; margin-top: 1px; }
 
         .hidden { display: none !important; }
-
-        /* LANDSCAPE MODE RESPONSIVE */
-        @media (orientation: landscape) and (min-height: 480px) {
-            body { padding: 6px 16px; }
-            .screen-content {
-                max-width: 980px;
-                flex-direction: row !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-                gap: 15px !important;
-            }
-            #screen1 .tablet-container, #screen2 .tablet-container { flex: 1.2; max-height: 60vh; }
-            #screen1 .btn-container, #screen2 .btn-container { flex: 0.9; }
-            #screen3, #screen4 { flex-direction: column !important; max-width: 680px; }
-            #screen5 .station-detail-card { flex-direction: row; flex-wrap: wrap; gap: 10px; padding: 10px; }
-            #screen5 .station-img-box { width: 45%; height: 130px; }
-            #screen5 .station-desc-text { width: 52%; max-height: 130px; }
-            #screen5 .ai-qa-box { width: 100%; }
-            #screen5 .btn-container { max-width: 250px; }
-        }
     </style>
 </head>
 <body>
@@ -499,45 +476,45 @@
     <div id="screen3" class="screen-content hidden">
         <div class="header-compact-box">
             <span class="robot-avatar">🤖</span>
-            <span style="color: #fde047; font-size: clamp(11px, 1.3vw, 13.5px); font-weight: 800; letter-spacing: 1px;">SILA PILIH BAHASA / SELECT LANGUAGE</span>
+            <span style="color: #fde047; font-size: 12px; font-weight: 800; letter-spacing: 1px;">SILA PILIH BAHASA / SELECT LANGUAGE</span>
         </div>
 
         <div class="btn-container">
             <div class="lang-list-vertical">
                 <div class="lang-row-btn active" onclick="selectAndAdvanceLanguage('BM', this)">
                     <div class="lang-left">
-                        <span style="font-size: clamp(16px, 2vw, 22px);">🇲🇾</span>
+                        <span style="font-size: 20px;">🇲🇾</span>
                         <span>Bahasa Melayu</span>
                     </div>
-                    <span style="font-size: clamp(9.5px, 1.1vw, 11.5px); color: #38bdf8; font-weight: 800;">MY</span>
+                    <span style="font-size: 11px; color: #38bdf8; font-weight: 800;">MY</span>
                 </div>
 
                 <div class="lang-row-btn" onclick="selectAndAdvanceLanguage('EN', this)">
                     <div class="lang-left">
-                        <span style="font-size: clamp(16px, 2vw, 22px);">🇬🇧</span>
+                        <span style="font-size: 20px;">🇬🇧</span>
                         <span>English</span>
                     </div>
-                    <span style="font-size: clamp(9.5px, 1.1vw, 11.5px); color: #94a3b8; font-weight: 800;">GB</span>
+                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">GB</span>
                 </div>
 
                 <div class="lang-row-btn" onclick="selectAndAdvanceLanguage('CN', this)">
                     <div class="lang-left">
-                        <span style="font-size: clamp(16px, 2vw, 22px);">🇨🇳</span>
+                        <span style="font-size: 20px;">🇨🇳</span>
                         <span>中文 (Chinese)</span>
                     </div>
-                    <span style="font-size: clamp(9.5px, 1.1vw, 11.5px); color: #94a3b8; font-weight: 800;">CN</span>
+                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">CN</span>
                 </div>
 
                 <div class="lang-row-btn" onclick="selectAndAdvanceLanguage('TA', this)">
                     <div class="lang-left">
-                        <span style="font-size: clamp(16px, 2vw, 22px);">🇮🇳</span>
+                        <span style="font-size: 20px;">🇮🇳</span>
                         <span>தமிழ் (Tamil)</span>
                     </div>
-                    <span style="font-size: clamp(9.5px, 1.1vw, 11.5px); color: #94a3b8; font-weight: 800;">IN</span>
+                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800;">IN</span>
                 </div>
             </div>
 
-            <div class="nav-row" style="margin-top: clamp(6px, 1vh, 10px);">
+            <div class="nav-row" style="margin-top: 8px;">
                 <button class="nav-btn btn-back" onclick="goToScreen(2)">⬅ BACK</button>
                 <button class="nav-btn btn-home" onclick="goToScreen(1)">🏠 HOME</button>
             </div>
@@ -548,7 +525,7 @@
     <div id="screen4" class="screen-content hidden">
         <div class="header-compact-box">
             <span class="robot-avatar">🗺️</span>
-            <span id="p4HeaderTitle" style="color: #fde047; font-size: clamp(11px, 1.3vw, 13.5px); font-weight: 800; letter-spacing: 1px;">PILIH DESTINASI GALERI</span>
+            <span id="p4HeaderTitle" style="color: #fde047; font-size: 12px; font-weight: 800; letter-spacing: 1px;">PILIH DESTINASI GALERI</span>
         </div>
 
         <div class="btn-container">
@@ -561,7 +538,7 @@
                             <div class="station-text-sub" id="s1Sub">Terokai sejarah & asal usul batik</div>
                         </div>
                     </div>
-                    <span style="font-size: clamp(15px, 1.8vw, 18px);">🏛️</span>
+                    <span style="font-size: 18px;">🏛️</span>
                 </div>
 
                 <div class="station-card" onclick="openStationDetail(2)">
@@ -572,7 +549,7 @@
                             <div class="station-text-sub" id="s2Sub">Motif unik batik dan maksudnya</div>
                         </div>
                     </div>
-                    <span style="font-size: clamp(15px, 1.8vw, 18px);">🌺</span>
+                    <span style="font-size: 18px;">🌺</span>
                 </div>
 
                 <div class="station-card" onclick="openStationDetail(3)">
@@ -583,7 +560,7 @@
                             <div class="station-text-sub" id="s3Sub">Teknik mencanting dan penggunaan lilin</div>
                         </div>
                     </div>
-                    <span style="font-size: clamp(15px, 1.8vw, 18px);">🖌️</span>
+                    <span style="font-size: 18px;">🖌️</span>
                 </div>
 
                 <div class="station-card" onclick="openStationDetail(4)">
@@ -594,7 +571,7 @@
                             <div class="station-text-sub" id="s4Sub">Proses mewarna batik langkah demi langkah</div>
                         </div>
                     </div>
-                    <span style="font-size: clamp(15px, 1.8vw, 18px);">🎨</span>
+                    <span style="font-size: 18px;">🎨</span>
                 </div>
 
                 <div class="station-card" onclick="openStationDetail(5)">
@@ -605,22 +582,22 @@
                             <div class="station-text-sub" id="s5Sub">Koleksi hasil seni batik tradisional & moden</div>
                         </div>
                     </div>
-                    <span style="font-size: clamp(15px, 1.8vw, 18px);">👔</span>
+                    <span style="font-size: 18px;">👔</span>
                 </div>
             </div>
 
-            <div class="nav-row" style="margin-top: clamp(6px, 1vh, 10px);">
+            <div class="nav-row" style="margin-top: 8px;">
                 <button class="nav-btn btn-back" onclick="goToScreen(3)">⬅ BACK</button>
                 <button class="nav-btn btn-home" onclick="goToScreen(1)">🏠 HOME</button>
             </div>
         </div>
     </div>
 
-    <!-- PAPARAN 5: DETAIL STESEN DENGAN AI Q&A GUIDE -->
+    <!-- PAPARAN 5: DETAIL STESEN DENGAN SUSUNAN MENEGAK -->
     <div id="screen5" class="screen-content hidden">
-        <div class="header-compact-box" style="width: 100%;">
+        <div class="header-compact-box">
             <span class="robot-avatar" id="s5BadgeIcon">🏛️</span>
-            <span id="s5HeaderTitle" style="color: #fde047; font-size: clamp(11px, 1.3vw, 13.5px); font-weight: 800; letter-spacing: 1px;">PENERANGAN DESTINASI</span>
+            <span id="s5HeaderTitle" style="color: #fde047; font-size: 12px; font-weight: 800; letter-spacing: 1px;">PENERANGAN DESTINASI</span>
         </div>
 
         <div class="station-detail-card">
@@ -630,24 +607,20 @@
                 Penerangan stesen akan dimuatkan di sini...
             </div>
 
-            <!-- RUANGAN PERTANYAAN AI UNTUK PELAWAT -->
+            <!-- RUANGAN PERTANYAAN AI -->
             <div class="ai-qa-box">
                 <div class="ai-qa-header">
                     <span>💬 <span id="aiPromptTitle">TANYA BATIK BUDDY AI</span></span>
-                    <span style="font-size: 10px; color: #38bdf8;">⚡ AI Guide Active</span>
+                    <span style="font-size: 9px; color: #38bdf8;">⚡ AI Guide Active</span>
                 </div>
 
-                <!-- CADANGAN SOALAN PANTAS (PROMPT CHIPS) -->
-                <div class="ai-prompt-chips" id="aiQuickChips">
-                    <!-- Dimuatkan secara automatik mengikut stesen & bahasa -->
-                </div>
+                <div class="ai-prompt-chips" id="aiQuickChips"></div>
 
                 <div class="ai-input-row">
                     <input type="text" id="aiUserInput" class="ai-input-field" placeholder="Tulis soalan anda di sini..." onkeypress="if(event.key==='Enter') askBatikAI()">
-                    <button class="ai-send-btn" onclick="askBatikAI()">TANYA AI ➔</button>
+                    <button class="ai-send-btn" onclick="askBatikAI()">TANYA ➔</button>
                 </div>
 
-                <!-- KOTAK JAWAPAN AI -->
                 <div id="aiResponseBox" class="ai-answer-box"></div>
             </div>
 
@@ -813,10 +786,10 @@
         };
 
         const langData = {
-            BM: { p4Header: "PILIH DESTINASI GALERI", s1Title: "BATIK HERITAGE", s1Sub: "Sejarah, asal usul & evolusi batik", s2Title: "BATIK MOTIFS", s2Sub: "Terokai motif unik batik & maksudnya", s3Title: "CANTING & WAX", s3Sub: "Teknik mencanting & penggunaan lilin", s4Title: "COLOURING BATIK", s4Sub: "Proses mewarna batik langkah demi langkah", s5Title: "BATIK GALLERY", s5Sub: "Koleksi seni batik tradisional & moden", aiTitle: "TANYA BATIK BUDDY AI", aiHolder: "Tulis soalan anda mengenai stesen ini..." },
-            EN: { p4Header: "SELECT GALLERY DESTINATION", s1Title: "BATIK HERITAGE", s1Sub: "History, origins & evolution of batik", s2Title: "BATIK MOTIFS", s2Sub: "Explore unique motifs and their meanings", s3Title: "CANTING & WAX", s3Sub: "How canting & wax create patterns", s4Title: "COLOURING BATIK", s4Sub: "See how batik is coloured step by step", s5Title: "BATIK GALLERY", s5Sub: "Stunning traditional & modern batik", aiTitle: "ASK BATIK BUDDY AI", aiHolder: "Ask a question about this station..." },
-            CN: { p4Header: "选择蜡染展馆路线", s1Title: "BATIK HERITAGE (传统历史)", s1Sub: "探索马来西亚蜡染的历史与起源", s2Title: "BATIK MOTIFS (图案图案)", s2Sub: "了解独特蜡染图案及其寓意", s3Title: "CANTING & WAX (蜡画工艺)", s3Sub: "学习如何使用蜡斗与蜡绘图", s4Title: "COLOURING BATIK (蜡染上色)", s4Sub: "一步步了解蜡染染色过程", s5Title: "BATIK GALLERY (蜡染画廊)", s5Sub: "欣赏精美传统与现代蜡染作品", aiTitle: "向 BATIK BUDDY AI 提问", aiHolder: "请输入有关此展站的问题..." },
-            TA: { p4Header: "கேலரி இலக்கைத் தேர்ந்தெடுக்கவும்", s1Title: "BATIK HERITAGE (பாரம்பரியம்)", s1Sub: "பாட்டிக் கலையின் வரலாறு மற்றும் தோற்றம்", s2Title: "BATIK MOTIFS (வடிவங்கள்)", s2Sub: "தனித்துவமான பாட்டிக் வடிவங்களின் பொருள்", s3Title: "CANTING & WAX (மெழுகு வரைதல்)", s3Sub: "காண்டிங் மற்றும் மெழுகைப் பயன்படுத்தும் முறை", s4Title: "COLOURING BATIK (வண்ணமிடுதல்)", s4Sub: "பாட்டிக் வண்ணமிடும் படிகளைப் பார்க்கவும்", s5Title: "BATIK GALLERY (காட்சியகம்)", s5Sub: "பாரம்பரிய மற்றும் நவீன பாட்டிக் படைப்புகள்", aiTitle: "AI வழிகாட்டியிடம் கேளுங்கள்", aiHolder: "இந்த நிலையம் பற்றி ஒரு கேள்வியைக் கேளுங்கள்..." }
+            BM: { p4Header: "PILIH DESTINASI GALERI", s1Title: "BATIK HERITAGE", s1Sub: "Sejarah, asal usul & evolusi batik", s2Title: "BATIK MOTIFS", s2Sub: "Terokai motif unik batik & maksudnya", s3Title: "CANTING & WAX", s3Sub: "Teknik mencanting & penggunaan lilin", s4Title: "COLOURING BATIK", s4Sub: "Proses mewarna batik langkah demi langkah", s5Title: "BATIK GALLERY", s5Sub: "Koleksi seni batik tradisional & moden", aiTitle: "TANYA BATIK BUDDY AI", aiHolder: "Tulis soalan anda di sini..." },
+            EN: { p4Header: "SELECT GALLERY DESTINATION", s1Title: "BATIK HERITAGE", s1Sub: "History, origins & evolution of batik", s2Title: "BATIK MOTIFS", s2Sub: "Explore unique motifs and their meanings", s3Title: "CANTING & WAX", s3Sub: "How canting & wax create patterns", s4Title: "COLOURING BATIK", s4Sub: "See how batik is coloured step by step", s5Title: "BATIK GALLERY", s5Sub: "Stunning traditional & modern batik", aiTitle: "ASK BATIK BUDDY AI", aiHolder: "Ask a question here..." },
+            CN: { p4Header: "选择蜡染展馆路线", s1Title: "BATIK HERITAGE (传统历史)", s1Sub: "探索马来西亚蜡染的历史与起源", s2Title: "BATIK MOTIFS (图案图案)", s2Sub: "了解独特蜡染图案及其寓意", s3Title: "CANTING & WAX (蜡画工艺)", s3Sub: "学习如何使用蜡斗与蜡绘图", s4Title: "COLOURING BATIK (蜡染上色)", s4Sub: "一步步了解蜡染染色过程", s5Title: "BATIK GALLERY (蜡染画廊)", s5Sub: "欣赏精美传统与现代蜡染作品", aiTitle: "向 BATIK BUDDY AI 提问", aiHolder: "请输入您的问题..." },
+            TA: { p4Header: "கேலரி இலக்கைத் தேர்ந்தெடுக்கவும்", s1Title: "BATIK HERITAGE (பாரம்பரியம்)", s1Sub: "பாட்டிக் கலையின் வரலாறு மற்றும் தோற்றம்", s2Title: "BATIK MOTIFS (வடிவங்கள்)", s2Sub: "தனித்துவமான பாட்டிக் வடிவங்களின் பொருள்", s3Title: "CANTING & WAX (மெழுகு வரைதல்)", s3Sub: "காண்டிங் மற்றும் மெழுகைப் பயன்படுத்தும் முறை", s4Title: "COLOURING BATIK (வண்ணமிடுதல்)", s4Sub: "பாட்டிக் வண்ணமிடும் படிகளைப் பார்க்கவும்", s5Title: "BATIK GALLERY (காட்சியகம்)", s5Sub: "பாரம்பரிய மற்றும் நவீன பாட்டிக் படைப்புகள்", aiTitle: "AI வழிகாட்டியிடம் கேளுங்கள்", aiHolder: "கேள்வியைக் கேளுங்கள்..." }
         };
 
         function toggleFullScreen() {
@@ -913,7 +886,6 @@
             document.getElementById('aiUserInput').value = '';
             document.getElementById('aiResponseBox').style.display = 'none';
 
-            // Muatkan Cadangan Soalan Pantas
             let chipBox = document.getElementById('aiQuickChips');
             chipBox.innerHTML = '';
             if(langContent.chips) {
@@ -943,7 +915,6 @@
             speakText(langContent.desc);
         }
 
-        // SISTEM SOAL JAWAB AI PINTAR BERDASARKAN KONTEKS STESEN
         function askBatikAI() {
             let userQ = document.getElementById('aiUserInput').value.trim();
             if(!userQ) return;
@@ -956,7 +927,7 @@
                 let answer = generateAIAnswer(userQ, currentStationNum, selectedLang);
                 responseBox.innerHTML = `<strong>🤖 Jawapan Batik Buddy:</strong><br>${answer}`;
                 speakText(answer);
-            }, 600);
+            }, 500);
         }
 
         function generateAIAnswer(question, stationNum, lang) {
