@@ -27,7 +27,6 @@
             position: relative;
         }
 
-        /* BUTANG FULLSCREEN */
         .fullscreen-btn {
             position: absolute;
             top: 10px;
@@ -44,7 +43,6 @@
             backdrop-filter: blur(4px);
         }
 
-        /* HEADER */
         .header { text-align: center; width: 100%; margin-top: 2px; }
         .logo-title { 
             font-family: 'Cinzel Decorative', serif;
@@ -57,7 +55,6 @@
         .logo-sub { font-size: 10px; font-weight: 800; letter-spacing: 3px; color: #fde047; margin-top: 2px; }
         .logo-desc { font-size: 8.5px; font-weight: 700; letter-spacing: 2px; color: #94a3b8; margin-top: 1px; }
 
-        /* KANDUNGAN UTAMA MENURUN (100% TEGAK KEKAL) */
         .screen-content {
             width: 100%;
             max-width: 540px;
@@ -71,7 +68,6 @@
             padding: 4px 0;
         }
 
-        /* FRAME TABLET / VIDEO */
         .tablet-container {
             width: 100%;
             aspect-ratio: 16/9;
@@ -120,7 +116,6 @@
 
         .dot-green { width: 8px; height: 8px; background-color: #00ff88; border-radius: 50%; box-shadow: 0 0 8px #00ff88; }
 
-        /* BUTANG INTERAKTIF */
         .btn-container { width: 100%; text-align: center; }
 
         .dialog-text {
@@ -182,7 +177,6 @@
 
         .robot-avatar { font-size: 18px; filter: drop-shadow(0 0 6px #38bdf8); }
 
-        /* SENARAI BAHASA MENURUN (1 BARIS 1 PILIHAN) */
         .lang-list-vertical { display: flex !important; flex-direction: column !important; gap: 8px !important; width: 100% !important; }
 
         .lang-row-btn {
@@ -204,7 +198,6 @@
         .lang-row-btn.active, .lang-row-btn:hover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.3); box-shadow: 0 0 14px rgba(56, 189, 248, 0.5); }
         .lang-left { display: flex; align-items: center; gap: 10px; }
 
-        /* SENARAI 5 STESEN MENURUN */
         .stations-list { display: flex; flex-direction: column; gap: 6px; width: 100%; max-height: 48vh; overflow-y: auto; }
 
         .station-card {
@@ -229,7 +222,32 @@
         .station-text-title { font-size: 13px; font-weight: 900; color: #ffffff; }
         .station-text-sub { font-size: 9px; font-weight: 600; color: #94a3b8; }
 
-        /* DETAIL STESEN DENGAN SUSUNAN MENEGAK */
+        /* SKRIN TRANSISI: ROBOT SEDANG BERGERAK KE STESEN */
+        .moving-box {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            border: 2px dashed #38bdf8;
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .moving-radar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #38bdf8;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* DETAIL STESEN */
         .station-detail-card {
             width: 100%;
             background: rgba(15, 23, 42, 0.95);
@@ -315,11 +333,7 @@
 
         .ai-chip:hover { background: rgba(56, 189, 248, 0.3); color: #fff; }
 
-        .ai-input-row {
-            display: flex;
-            gap: 6px;
-            width: 100%;
-        }
+        .ai-input-row { display: flex; gap: 6px; width: 100%; }
 
         .ai-input-field {
             flex: 1;
@@ -362,9 +376,9 @@
 
         .controls-group { display: flex; gap: 6px; width: 100%; }
 
-        .audio-btn, .web-btn {
+        .audio-btn, .web-btn, .next-station-btn {
             flex: 1;
-            padding: 8px;
+            padding: 9px;
             border-radius: 12px;
             font-size: 11px;
             font-weight: 800;
@@ -378,6 +392,7 @@
 
         .audio-btn { background: rgba(56, 189, 248, 0.2); border: 1.5px solid #38bdf8; color: #38bdf8; }
         .web-btn { background: rgba(234, 179, 8, 0.2); border: 1.5px solid #eab308; color: #fef08a; }
+        .next-station-btn { background: #38bdf8; color: #020617; font-weight: 900; box-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
 
         .nav-row { display: flex; gap: 8px; width: 100%; }
 
@@ -521,7 +536,7 @@
         </div>
     </div>
 
-    <!-- PAPARAN 4: PILIHAN STESEN -->
+    <!-- PAPARAN 4: PILIHAN STESEN (PETA DESTINASI) -->
     <div id="screen4" class="screen-content hidden">
         <div class="header-compact-box">
             <span class="robot-avatar">🗺️</span>
@@ -530,7 +545,7 @@
 
         <div class="btn-container">
             <div class="stations-list">
-                <div class="station-card" onclick="openStationDetail(1)">
+                <div class="station-card" onclick="commandRobotToStation(1)">
                     <div class="station-info">
                         <div class="station-num" style="background: #eab308;">1</div>
                         <div>
@@ -541,7 +556,7 @@
                     <span style="font-size: 18px;">🏛️</span>
                 </div>
 
-                <div class="station-card" onclick="openStationDetail(2)">
+                <div class="station-card" onclick="commandRobotToStation(2)">
                     <div class="station-info">
                         <div class="station-num" style="background: #3b82f6;">2</div>
                         <div>
@@ -552,7 +567,7 @@
                     <span style="font-size: 18px;">🌺</span>
                 </div>
 
-                <div class="station-card" onclick="openStationDetail(3)">
+                <div class="station-card" onclick="commandRobotToStation(3)">
                     <div class="station-info">
                         <div class="station-num" style="background: #22c55e;">3</div>
                         <div>
@@ -563,7 +578,7 @@
                     <span style="font-size: 18px;">🖌️</span>
                 </div>
 
-                <div class="station-card" onclick="openStationDetail(4)">
+                <div class="station-card" onclick="commandRobotToStation(4)">
                     <div class="station-info">
                         <div class="station-num" style="background: #f97316;">4</div>
                         <div>
@@ -574,7 +589,7 @@
                     <span style="font-size: 18px;">🎨</span>
                 </div>
 
-                <div class="station-card" onclick="openStationDetail(5)">
+                <div class="station-card" onclick="commandRobotToStation(5)">
                     <div class="station-info">
                         <div class="station-num" style="background: #ec4899;">5</div>
                         <div>
@@ -593,7 +608,21 @@
         </div>
     </div>
 
-    <!-- PAPARAN 5: DETAIL STESEN DENGAN SUSUNAN MENEGAK -->
+    <!-- SKRIN 4.5: ROBOT SEDANG BERGERAK (WAITING / NAVIGATION SCREEN) -->
+    <div id="screenMoving" class="screen-content hidden">
+        <div class="moving-box">
+            <div class="moving-radar"></div>
+            <div style="font-size: 16px; font-weight: 900; color: #fde047;" id="movingTitleText">ROBOT SEDANG BERGERAK...</div>
+            <div style="font-size: 12px; color: #94a3b8;" id="movingSubText">Sila ikuti robot ke stesen destinasi. Audio penerangan akan bermula sebaik sahaja tiba.</div>
+            
+            <!-- Butang Simulasi Tiba (untuk ujian jika tanpa ESP32) -->
+            <button class="touch-btn" style="margin-top: 10px; font-size: 12px; padding: 10px;" onclick="simulateArrival()">
+                ⚡ SIMULASI TIBA DI STESEN (TEST)
+            </button>
+        </div>
+    </div>
+
+    <!-- PAPARAN 5: DETAIL STESEN DENGAN AUDIO AUTO PLAY BILA SAMPAI -->
     <div id="screen5" class="screen-content hidden">
         <div class="header-compact-box">
             <span class="robot-avatar" id="s5BadgeIcon">🏛️</span>
@@ -629,9 +658,14 @@
                     <span id="audioBtnIcon">🔊</span> <span id="audioBtnText">Audio Penerangan</span>
                 </button>
                 <a id="externalWebBtn" href="https://www.omarali.com.my/batik-malaysia/" target="_blank" class="web-btn" style="display: none;">
-                    🌐 Buka Omar Ali Batik
+                    🌐 Buka Omar Ali
                 </a>
             </div>
+
+            <!-- BUTANG SAMBUNG PERJALANAN KE STESEN SETERUSNYA -->
+            <button class="next-station-btn" style="width: 100%; margin-top: 4px;" onclick="resumeNextStation()">
+                TERUSKAN KE STESEN SETERUSNYA ➔
+            </button>
         </div>
 
         <div class="btn-container">
@@ -654,7 +688,7 @@
     <script>
         let selectedLang = 'BM';
         let isSpeaking = false;
-        let currentStationNum = 1;
+        let currentTargetStation = 1;
         let bleDevice = null;
         let bleCharacteristic = null;
 
@@ -786,21 +820,17 @@
         };
 
         const langData = {
-            BM: { p4Header: "PILIH DESTINASI GALERI", s1Title: "BATIK HERITAGE", s1Sub: "Sejarah, asal usul & evolusi batik", s2Title: "BATIK MOTIFS", s2Sub: "Terokai motif unik batik & maksudnya", s3Title: "CANTING & WAX", s3Sub: "Teknik mencanting & penggunaan lilin", s4Title: "COLOURING BATIK", s4Sub: "Proses mewarna batik langkah demi langkah", s5Title: "BATIK GALLERY", s5Sub: "Koleksi seni batik tradisional & moden", aiTitle: "TANYA BATIK BUDDY AI", aiHolder: "Tulis soalan anda di sini..." },
-            EN: { p4Header: "SELECT GALLERY DESTINATION", s1Title: "BATIK HERITAGE", s1Sub: "History, origins & evolution of batik", s2Title: "BATIK MOTIFS", s2Sub: "Explore unique motifs and their meanings", s3Title: "CANTING & WAX", s3Sub: "How canting & wax create patterns", s4Title: "COLOURING BATIK", s4Sub: "See how batik is coloured step by step", s5Title: "BATIK GALLERY", s5Sub: "Stunning traditional & modern batik", aiTitle: "ASK BATIK BUDDY AI", aiHolder: "Ask a question here..." },
-            CN: { p4Header: "选择蜡染展馆路线", s1Title: "BATIK HERITAGE (传统历史)", s1Sub: "探索马来西亚蜡染的历史与起源", s2Title: "BATIK MOTIFS (图案图案)", s2Sub: "了解独特蜡染图案及其寓意", s3Title: "CANTING & WAX (蜡画工艺)", s3Sub: "学习如何使用蜡斗与蜡绘图", s4Title: "COLOURING BATIK (蜡染上色)", s4Sub: "一步步了解蜡染染色过程", s5Title: "BATIK GALLERY (蜡染画廊)", s5Sub: "欣赏精美传统与现代蜡染作品", aiTitle: "向 BATIK BUDDY AI 提问", aiHolder: "请输入您的问题..." },
-            TA: { p4Header: "கேலரி இலக்கைத் தேர்ந்தெடுக்கவும்", s1Title: "BATIK HERITAGE (பாரம்பரியம்)", s1Sub: "பாட்டிக் கலையின் வரலாறு மற்றும் தோற்றம்", s2Title: "BATIK MOTIFS (வடிவங்கள்)", s2Sub: "தனித்துவமான பாட்டிக் வடிவங்களின் பொருள்", s3Title: "CANTING & WAX (மெழுகு வரைதல்)", s3Sub: "காண்டிங் மற்றும் மெழுகைப் பயன்படுத்தும் முறை", s4Title: "COLOURING BATIK (வண்ணமிடுதல்)", s4Sub: "பாட்டிக் வண்ணமிடும் படிகளைப் பார்க்கவும்", s5Title: "BATIK GALLERY (காட்சியகம்)", s5Sub: "பாரம்பரிய மற்றும் நவீன பாட்டிக் படைப்புகள்", aiTitle: "AI வழிகாட்டியிடம் கேளுங்கள்", aiHolder: "கேள்வியைக் கேளுங்கள்..." }
+            BM: { p4Header: "PILIH DESTINASI GALERI", s1Title: "BATIK HERITAGE", s1Sub: "Sejarah, asal usul & evolusi batik", s2Title: "BATIK MOTIFS", s2Sub: "Terokai motif unik batik & maksudnya", s3Title: "CANTING & WAX", s3Sub: "Teknik mencanting & penggunaan lilin", s4Title: "COLOURING BATIK", s4Sub: "Proses mewarna batik langkah demi langkah", s5Title: "BATIK GALLERY", s5Sub: "Koleksi seni batik tradisional & moden", aiTitle: "TANYA BATIK BUDDY AI", aiHolder: "Tulis soalan anda di sini...", movingText: "ROBOT SEDANG MENUJU KE STESEN " },
+            EN: { p4Header: "SELECT GALLERY DESTINATION", s1Title: "BATIK HERITAGE", s1Sub: "History, origins & evolution of batik", s2Title: "BATIK MOTIFS", s2Sub: "Explore unique motifs and their meanings", s3Title: "CANTING & WAX", s3Sub: "How canting & wax create patterns", s4Title: "COLOURING BATIK", s4Sub: "See how batik is coloured step by step", s5Title: "BATIK GALLERY", s5Sub: "Stunning traditional & modern batik", aiTitle: "ASK BATIK BUDDY AI", aiHolder: "Ask a question here...", movingText: "ROBOT IS MOVING TO STATION " },
+            CN: { p4Header: "选择蜡染展馆路线", s1Title: "BATIK HERITAGE (传统历史)", s1Sub: "探索马来西亚蜡染的历史与起源", s2Title: "BATIK MOTIFS (图案图案)", s2Sub: "了解独特蜡染图案及其寓意", s3Title: "CANTING & WAX (蜡画工艺)", s3Sub: "学习如何使用蜡斗与蜡绘图", s4Title: "COLOURING BATIK (蜡染上色)", s4Sub: "一步步了解蜡染染色过程", s5Title: "BATIK GALLERY (蜡染画廊)", s5Sub: "欣赏精美传统与现代蜡染作品", aiTitle: "向 BATIK BUDDY AI 提问", aiHolder: "请输入您的问题...", movingText: "机器人正在前往第 " },
+            TA: { p4Header: "கேலரி இலக்கைத் தேர்ந்தெடுக்கவும்", s1Title: "BATIK HERITAGE (பாரம்பரியம்)", s1Sub: "பாட்டிக் கலையின் வரலாறு மற்றும் தோற்றம்", s2Title: "BATIK MOTIFS (வடிவங்கள்)", s2Sub: "தனித்துவமான பாட்டிக் வடிவங்களின் பொருள்", s3Title: "CANTING & WAX (மெழுகு வரைதல்)", s3Sub: "காண்டிங் மற்றும் மெழுகைப் பயன்படுத்தும் முறை", s4Title: "COLOURING BATIK (வண்ணமிடுதல்)", s4Sub: "பாட்டிக் வண்ணமிடும் படிகளைப் பார்க்கவும்", s5Title: "BATIK GALLERY (காட்சியகம்)", s5Sub: "பாரம்பரிய மற்றும் நவீன பாட்டிக் படைப்புகள்", aiTitle: "AI வழிகாட்டியிடம் கேளுங்கள்", aiHolder: "கேள்வியைக் கேளுங்கள்...", movingText: "ரோபோ நிலையத்திற்கு நகர்கிறது " }
         };
 
         function toggleFullScreen() {
             if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.log(`Fullscreen error: ${err.message}`);
-                });
+                document.documentElement.requestFullscreen().catch(err => console.log(err));
             } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
+                if (document.exitFullscreen) document.exitFullscreen();
             }
         }
 
@@ -812,6 +842,7 @@
             document.getElementById('screen2').classList.add('hidden');
             document.getElementById('screen3').classList.add('hidden');
             document.getElementById('screen4').classList.add('hidden');
+            document.getElementById('screenMoving').classList.add('hidden');
             document.getElementById('screen5').classList.add('hidden');
 
             let sVid = document.getElementById('sleepVid');
@@ -838,6 +869,10 @@
                 wVid.pause();
                 updateScreen4Language();
                 document.getElementById('screen4').classList.remove('hidden');
+            } else if (screenNum === 'moving') {
+                document.getElementById('screenMoving').classList.remove('hidden');
+            } else if (screenNum === 5) {
+                document.getElementById('screen5').classList.remove('hidden');
             }
         }
 
@@ -871,8 +906,22 @@
             document.getElementById('s5Sub').innerText = data.s5Sub;
         }
 
-        function openStationDetail(num) {
-            currentStationNum = num;
+        // 1. ARAHKAN ROBOT BERGERAK KE STESEN (BELUM MAIN AUDIO)
+        function commandRobotToStation(num) {
+            currentTargetStation = num;
+            const data = langData[selectedLang] || langData['BM'];
+            
+            // Paparkan skrin robot sedang bergerak
+            document.getElementById('movingTitleText').innerText = data.movingText + num + "...";
+            goToScreen('moving');
+
+            // Hantar signal BLE ke ESP32 untuk memulakan pergerakan motor
+            sendBLECommand("GOTO_STATION_" + num);
+        }
+
+        // 2. SAMPAI DI STESEN -> BUKA PAPARAN & AUTOPLAY AUDIO PENERANGAN
+        function onRobotArrivedStation(num) {
+            currentTargetStation = num;
             const data = stationDetailsData[num];
             const langContent = data[selectedLang] || data['BM'];
             const langGeneral = langData[selectedLang] || langData['BM'];
@@ -910,9 +959,25 @@
             }
 
             goToScreen(5);
-            document.getElementById('screen5').classList.remove('hidden');
 
+            // MAIN AUDIO PENERANGAN SECARA AUTOMATIK BILA SAMPAI!
             speakText(langContent.desc);
+        }
+
+        // 3. TERUSKAN KE STESEN SETERUSNYA
+        function resumeNextStation() {
+            window.speechSynthesis.cancel();
+            if (currentTargetStation < 5) {
+                commandRobotToStation(currentTargetStation + 1);
+            } else {
+                alert("Lawatan galeri lengkap! Robot akan kembali ke titik permulaan.");
+                sendBLECommand("MOVE_NEXT");
+                goToScreen(1);
+            }
+        }
+
+        function simulateArrival() {
+            onRobotArrivedStation(currentTargetStation);
         }
 
         function askBatikAI() {
@@ -924,7 +989,7 @@
             responseBox.innerHTML = `<em>🤖 Batik Buddy AI sedang menganalisis jawapan...</em>`;
 
             setTimeout(() => {
-                let answer = generateAIAnswer(userQ, currentStationNum, selectedLang);
+                let answer = generateAIAnswer(userQ, currentTargetStation, selectedLang);
                 responseBox.innerHTML = `<strong>🤖 Jawapan Batik Buddy:</strong><br>${answer}`;
                 speakText(answer);
             }, 500);
@@ -932,7 +997,6 @@
 
         function generateAIAnswer(question, stationNum, lang) {
             let q = question.toLowerCase();
-            
             if (stationNum === 1) {
                 if (lang === 'BM') {
                     if (q.includes("mula") || q.includes("mana")) return "Batik Malaysia berkembang pesat di negeri Pantai Timur iaitu Kelantan dan Terengganu sejak awal abad ke-20.";
@@ -994,7 +1058,6 @@
                     return "இந்தக் காட்சியகம் சர்வதேச அளவில் அணியப்படும் நவீன பாட்டிக் ஆடை வடிவமைப்புகளைக் காட்டுகிறது.";
                 }
             }
-
             return lang === 'BM' ? "Sila pilih salah satu soalan pantas di atas atau tanya mengenai stesen ini." : "Feel free to tap the quick question prompts above.";
         }
 
@@ -1026,12 +1089,13 @@
                 document.getElementById('audioBtnIcon').innerText = "🔊";
                 document.getElementById('audioBtnText').innerText = "Audio Penerangan";
             } else {
-                const data = stationDetailsData[currentStationNum];
+                const data = stationDetailsData[currentTargetStation];
                 const langContent = data[selectedLang] || data['BM'];
                 speakText(langContent.desc);
             }
         }
 
+        // SAMBUNGAN & PENGHANTARAN BLE
         async function connectESP32() {
             try {
                 bleDevice = await navigator.bluetooth.requestDevice({
@@ -1046,11 +1110,14 @@
                 await bleCharacteristic.startNotifications();
                 bleCharacteristic.addEventListener('characteristicvaluechanged', (e) => {
                     const val = new TextDecoder().decode(e.target.value);
-                    if (val === "STATION_1") openStationDetail(1);
-                    else if (val === "STATION_2") openStationDetail(2);
-                    else if (val === "STATION_3") openStationDetail(3);
-                    else if (val === "STATION_4") openStationDetail(4);
-                    else if (val === "STATION_5") openStationDetail(5);
+                    console.log("Data diterima dari ESP32:", val);
+                    
+                    // Apabila ESP32 maklumkan robot sudah sampai di stesen
+                    if (val === "ARRIVED_STATION_1") onRobotArrivedStation(1);
+                    else if (val === "ARRIVED_STATION_2") onRobotArrivedStation(2);
+                    else if (val === "ARRIVED_STATION_3") onRobotArrivedStation(3);
+                    else if (val === "ARRIVED_STATION_4") onRobotArrivedStation(4);
+                    else if (val === "ARRIVED_STATION_5") onRobotArrivedStation(5);
                     else if (val === "WAKEUP") goToScreen(2);
                     else if (val === "SLEEP") goToScreen(1);
                 });
@@ -1064,6 +1131,17 @@
 
             } catch (err) {
                 console.log("BLE Connection Cancelled or Error: " + err);
+            }
+        }
+
+        function sendBLECommand(cmd) {
+            if (bleCharacteristic) {
+                let encoder = new TextEncoder();
+                bleCharacteristic.writeValue(encoder.encode(cmd))
+                    .then(() => console.log("Hantar arahan BLE:", cmd))
+                    .catch(e => console.log("Gagal hantar BLE:", e));
+            } else {
+                console.log("Simulation Mode: Arahan " + cmd);
             }
         }
     </script>
