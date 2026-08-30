@@ -24,9 +24,26 @@
             min-height: 100vh; 
             padding: 10px 15px;
             overflow: hidden;
+            position: relative;
         }
 
-        /* HEADER TOP OPTIMUM */
+        /* BUTANG FULLSCREEN KIOSK */
+        .fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        /* HEADER TOP */
         .header { text-align: center; margin-top: 2px; }
         .logo-title { 
             font-family: 'Cinzel Decorative', serif;
@@ -39,10 +56,10 @@
         .logo-sub { font-size: 9px; font-weight: 800; letter-spacing: 3px; color: #fde047; margin-top: 1px; }
         .logo-desc { font-size: 8px; font-weight: 700; letter-spacing: 2px; color: #94a3b8; margin-top: 1px; }
 
-        /* TABLET FRAME FULL OPTIMAL HEIGHT */
+        /* TABLET CONTAINER */
         .tablet-container {
             width: 100%;
-            max-width: 520px;
+            max-width: 540px;
             height: 220px;
             background: #020617;
             border-radius: 18px;
@@ -89,8 +106,7 @@
 
         .dot-green { width: 7px; height: 7px; background-color: #00ff88; border-radius: 50%; box-shadow: 0 0 8px #00ff88; }
 
-        /* BUTTON CONTAINERS */
-        .btn-container { width: 100%; max-width: 520px; text-align: center; }
+        .btn-container { width: 100%; max-width: 540px; text-align: center; }
 
         .dialog-text {
             font-size: 14px;
@@ -138,7 +154,7 @@
 
         .header-compact-box {
             width: 100%;
-            max-width: 520px;
+            max-width: 540px;
             background: rgba(2, 6, 23, 0.8);
             border-radius: 12px;
             padding: 6px 12px;
@@ -152,7 +168,6 @@
 
         .robot-avatar { font-size: 18px; filter: drop-shadow(0 0 6px #38bdf8); }
 
-        /* SENARAI BAHASA MENURUN (FULL SPACE OPTIMUM) */
         .lang-list-vertical { display: flex !important; flex-direction: column !important; gap: 8px !important; width: 100% !important; margin-bottom: 6px !important; }
 
         .lang-row-btn {
@@ -174,7 +189,6 @@
         .lang-row-btn.active, .lang-row-btn:hover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.25); box-shadow: 0 0 12px rgba(56, 189, 248, 0.4); }
         .lang-left { display: flex; align-items: center; gap: 12px; }
 
-        /* SENARAI STESEN */
         .stations-list { display: flex; flex-direction: column; gap: 6px; width: 100%; margin-bottom: 6px; }
 
         .station-card {
@@ -199,10 +213,10 @@
         .station-text-title { font-size: 13px; font-weight: 800; color: #ffffff; }
         .station-text-sub { font-size: 9px; font-weight: 600; color: #94a3b8; }
 
-        /* PAPARAN 5: PENERANGAN STESEN BERASINGAN (OPTIMUM) */
+        /* DETAIL STESEN */
         .station-detail-card {
             width: 100%;
-            max-width: 520px;
+            max-width: 540px;
             background: rgba(15, 23, 42, 0.95);
             border: 2px solid #38bdf8;
             border-radius: 16px;
@@ -214,10 +228,9 @@
             margin-bottom: 6px;
         }
 
-        /* BOX IMEJ VEKTOR TERPASANG TERUS (100% GARANTI OUT) */
         .station-img-box {
             width: 100%;
-            height: 150px;
+            height: 130px;
             border-radius: 12px;
             overflow: hidden;
             margin-bottom: 8px;
@@ -228,13 +241,10 @@
             justify-content: center;
         }
 
-        .station-img-box svg {
-            width: 100%;
-            height: 100%;
-        }
+        .station-img-box svg { width: 100%; height: 100%; }
 
         .station-desc-text {
-            font-size: 12px;
+            font-size: 11.5px;
             line-height: 1.5;
             color: #e2e8f0;
             text-align: justify;
@@ -243,22 +253,48 @@
             border-radius: 10px;
             border-left: 3px solid #fde047;
             width: 100%;
+            max-height: 95px;
+            overflow-y: auto;
+        }
+
+        .controls-group {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            margin-top: 8px;
         }
 
         .audio-btn {
+            flex: 1;
             background: rgba(56, 189, 248, 0.2);
             border: 1px solid #38bdf8;
             color: #38bdf8;
-            padding: 8px 16px;
-            border-radius: 18px;
+            padding: 8px;
+            border-radius: 14px;
             font-size: 11px;
             font-weight: 800;
             cursor: pointer;
-            margin-top: 8px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        .web-btn {
+            flex: 1;
+            background: rgba(234, 179, 8, 0.2);
+            border: 1px solid #eab308;
+            color: #fef08a;
+            padding: 8px;
+            border-radius: 14px;
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
         .nav-row { display: flex; gap: 8px; width: 100%; margin-top: 4px; }
@@ -272,10 +308,10 @@
 
         .tap-sub { font-size: 8px; letter-spacing: 2px; color: #94a3b8; margin-top: 4px; font-weight: 600; }
 
-        /* BOTTOM CONNECTION BAR */
+        /* CONNECTION BAR UNTUK WINDOWS TABLET & ESP32 */
         .connection-bar {
             width: 100%;
-            max-width: 520px;
+            max-width: 540px;
             background: rgba(15, 23, 42, 0.8);
             border: 1.5px solid #ef4444;
             border-radius: 16px;
@@ -286,6 +322,8 @@
             box-shadow: inset 0 0 8px rgba(239, 68, 68, 0.2);
             margin-bottom: 2px;
             backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .status-light { width: 14px; height: 14px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 10px #ef4444; flex-shrink: 0; }
@@ -296,6 +334,9 @@
     </style>
 </head>
 <body>
+
+    <!-- BUTANG SKRIN PENUH UNTUK TABLET -->
+    <button class="fullscreen-btn" onclick="toggleFullScreen()">⛶ FULLSCREEN</button>
 
     <!-- HEADER TOP -->
     <div class="header">
@@ -472,7 +513,7 @@
         </div>
     </div>
 
-    <!-- PAPARAN 5: DETAIL STESEN BERASINGAN (IMEJ GARANTI TERPAPAR) -->
+    <!-- PAPARAN 5: DETAIL STESEN BERASINGAN -->
     <div id="screen5" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
         <div class="header-compact-box">
             <span class="robot-avatar" id="s5BadgeIcon">🏛️</span>
@@ -480,18 +521,20 @@
         </div>
 
         <div class="station-detail-card">
-            <!-- WADAH IMEJ VEKTOR TERPASANG AUTOMATIK -->
-            <div class="station-img-box" id="svgContainer">
-                <!-- SVG diletakkan melalui JS -->
-            </div>
+            <div class="station-img-box" id="svgContainer"></div>
 
             <div class="station-desc-text" id="stationFullText">
                 Penerangan stesen akan dimuatkan di sini...
             </div>
 
-            <button class="audio-btn" onclick="toggleAudioSpeech()">
-                <span id="audioBtnIcon">🔊</span> <span id="audioBtnText">Mainkan Suara Audio</span>
-            </button>
+            <div class="controls-group">
+                <button class="audio-btn" onclick="toggleAudioSpeech()">
+                    <span id="audioBtnIcon">🔊</span> <span id="audioBtnText">Audio Penerangan</span>
+                </button>
+                <a id="externalWebBtn" href="https://www.omarali.com.my/batik-malaysia/" target="_blank" class="web-btn" style="display: none;">
+                    🌐 Buka Omar Ali Batik
+                </a>
+            </div>
         </div>
 
         <div class="btn-container">
@@ -503,11 +546,11 @@
     </div>
 
     <!-- BOTTOM CONNECTION BAR -->
-    <div class="connection-bar">
-        <div class="status-light"></div>
+    <div id="connBar" class="connection-bar" onclick="connectESP32()">
+        <div id="connLight" class="status-light"></div>
         <div>
-            <div class="status-title">iPad ⇄ SPIKE PRIME</div>
-            <div class="status-desc">NOT CONNECTED<br>SIMULATION MODE</div>
+            <div id="connTitle" class="status-title">TABLET ⇄ ESP32 ROBOT</div>
+            <div id="connDesc" class="status-desc">KLIK UNTUK SAMBUNG BLE (SIMULATION MODE)</div>
         </div>
     </div>
 
@@ -515,10 +558,11 @@
         let selectedLang = 'BM';
         let isSpeaking = false;
         let currentStationNum = 1;
+        let bleDevice = null;
+        let bleCharacteristic = null;
 
-        // IMEJ VEKTOR KREATIF TERBINA DALAM (100% TIDAK TERPUTUS/SEKAT)
         const svgImages = {
-            1: `<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="180" fill="#0f172a"/><polygon points="200,30 80,90 320,90" fill="#eab308"/><rect x="100" y="90" width="200" height="70" fill="#854d0e"/><rect x="180" y="110" width="40" height="50" fill="#fef08a"/><circle cx="200" cy="65" r="12" fill="#020617"/><text x="200" y="172" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">SEJARAH WARISAN BATIK MALAYSIA</text></svg>`,
+            1: `<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="180" fill="#0f172a"/><polygon points="200,30 80,90 320,90" fill="#eab308"/><rect x="100" y="90" width="200" height="70" fill="#854d0e"/><rect x="180" y="110" width="40" height="50" fill="#fef08a"/><circle cx="200" cy="65" r="12" fill="#020617"/><text x="200" y="172" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">SEJARAH WARISAN BATIK MALAYSIA (OMAR ALI)</text></svg>`,
             2: `<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="180" fill="#0f172a"/><circle cx="200" cy="85" r="45" fill="#ec4899"/><circle cx="200" cy="85" r="25" fill="#fde047"/><path d="M200,20 Q230,50 200,85 Q170,50 200,20 Z" fill="#3b82f6"/><path d="M200,150 Q230,120 200,85 Q170,120 200,150 Z" fill="#3b82f6"/><path d="M135,85 Q165,55 200,85 Q165,115 135,85 Z" fill="#22c55e"/><path d="M265,85 Q235,55 200,85 Q235,115 265,85 Z" fill="#22c55e"/><text x="200" y="170" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">MOTIF PUCUK REBUNG & FLORA</text></svg>`,
             3: `<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="180" fill="#0f172a"/><path d="M100,120 L280,60" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/><ellipse cx="280" cy="60" rx="18" ry="12" fill="#b45309"/><path d="M280,60 Q320,80 300,130" stroke="#eab308" stroke-width="3" fill="none"/><circle cx="300" cy="132" r="5" fill="#eab308"/><text x="200" y="170" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">ALAT CANTING & TEKNIK LILIN RESIST</text></svg>`,
             4: `<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="180" fill="#0f172a"/><circle cx="120" cy="90" r="30" fill="#ef4444"/><circle cx="200" cy="90" r="30" fill="#3b82f6"/><circle cx="280" cy="90" r="30" fill="#22c55e"/><polygon points="200,20 180,60 220,60" fill="#fde047"/><text x="200" y="170" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">PROSES MEWARNA & GRADASI WARNA</text></svg>`,
@@ -528,38 +572,39 @@
         const stationDetailsData = {
             1: {
                 icon: "🏛️",
-                BM: { title: "STESEN 1: SEJARAH BATIK", desc: "Seni batik merupakan warisan kebudayaan Melayu sejak abad ke-12 di Kelantan dan Terengganu. Teknik awal bermula dengan rekaan blok kayu (batik cap) sebelum berkembang menggunakan canting dan bahan lilin asli. Batik Malaysia diiktiraf dunia kerana keunikan motif flora dan geometri yang anggun." },
-                EN: { title: "STATION 1: BATIK HERITAGE", desc: "Batik art is a Malay cultural heritage dating back to the 12th century in Kelantan and Terengganu. Early techniques began with wooden block stamping before advancing to canting tools with natural wax. Malaysian batik is globally celebrated for its elegant floral and geometric motifs." },
-                CN: { title: "第 1 站：蜡染历史与传承", desc: "蜡染艺术是自12世纪以来吉兰丹和丁加奴的马来文化遗产。早期技术始于木块盖印，后来演变为使用蜡斗和天然蜡。马来西亚蜡染因其优雅的花卉和几何图案而闻名世界。" },
-                TA: { title: "நிலையம் 1: பாட்டிக் பாரம்பரியம்", desc: "பாட்டிக் கலை என்பது 12 ஆம் நூற்றாண்டு முதல் கிளந்தான் மற்றும் திரங்கானுவில் உள்ள மலாய் கலாச்சார பாரம்பரியமாகும். இயற்கை மெழுகுடன் காண்டிங் கருவிகளைப் பயன்படுத்துவதற்கு முன்பு மரக் தொகுதி முத்திரையிடலுடன் ஆரம்ப நுட்பங்கள் தொடங்கின." }
+                webUrl: "https://www.omarali.com.my/batik-malaysia/",
+                BM: { title: "STESEN 1: SEJARAH BATIK MALAYSIA", desc: "Menurut portal dokumentasi warisan Omar Ali, batik Malaysia mula berkembang di Kelantan dan Terengganu sejak awal abad ke-20. Berbeza dengan batik rantau lain, batik Malaysia terkenal dengan penggunaan motif flora bersaiz besar, garisan mencanting yang halus, serta teknik pewarnaan pastel yang moden dan elegan." },
+                EN: { title: "STATION 1: MALAYSIAN BATIK HERITAGE", desc: "According to Omar Ali's heritage documentation, Malaysian batik flourished in Kelantan and Terengganu since the early 20th century. Unlike other regional styles, Malaysian batik is celebrated for large floral motifs, delicate canting lines, and vibrant modern pastel dyes." },
+                CN: { title: "第 1 站：马来西亚蜡染历史 (OMAR ALI)", desc: "根据 Omar Ali 官方文献记载，马来西亚蜡染自20世纪初在吉兰丹和丁加奴兴起。与区域其他蜡染不同，马来西亚蜡染以夸张优雅的花卉图案、精细的蜡画线条以及现代化鲜艳的色彩而闻名于世。" },
+                TA: { title: "நிலையம் 1: பாட்டிக் வரலாறு (OMAR ALI)", desc: "Omar Ali இன் பாரம்பரிய ஆவணங்களின்படி, மலேசிய பாட்டிக் 20 ஆம் நூற்றாண்டின் தொடக்கத்தில் கிளந்தான் மற்றும் திரங்கானுவில் செழித்தது. மலேசிய பாட்டிக் பெரிய மலர் உருவங்கள் மற்றும் மென்மையான காண்டிங் கோடுகளுக்கு உலகளவில் பிரபலமானது." }
             },
             2: {
                 icon: "🌺",
                 BM: { title: "STESEN 2: MOTIF BATIK", desc: "Motif batik Malaysia berasaskan keindahan alam semula jadi seperti Pucuk Rebung, Bunga Raya, dan Awan Larat. Pucuk Rebung melambangkan pertumbuhan moral masyarakat, manakala corak Bunga Raya menggambarkan identiti kebangsaan dan keteguhan." },
                 EN: { title: "STATION 2: BATIK MOTIFS", desc: "Malaysian batik motifs are inspired by natural elements such as Pucuk Rebung (bamboo shoots), Hibiscus, and Awan Larat. Bamboo shoots symbolize moral growth, while the Hibiscus reflects national identity and strength." },
                 CN: { title: "第 2 站：蜡染图案与寓意", desc: "马来西亚蜡染图案灵感来自竹笋、大红花和云纹等自然元素。竹笋象征着品德的成长，而大红花则反映了国家身份与坚韧精神。" },
-                TA: { title: "நிலையம் 2: பாட்டிக் வடிவங்கள்", desc: "மலேசிய பாட்டிக் வடிவங்கள் மூங்கில் குருத்துக்கள், செம்பருத்தி மற்றும் மேகங்கள் போன்ற இயற்கை উপাদানங்களால் ஈர்க்கப்பட்டுள்ளன. மூங்கில் குருத்துக்கள் நெறிமுறை வளர்ச்சியைக் குறிக்கின்றன." }
+                TA: { title: "நிலையம் 2: பாட்டிக் வடிவங்கள்", desc: "மலேசிய பாட்டிக் வடிவங்கள் மூங்கில் குருத்துக்கள், செம்பருத்தி மற்றும் மேகங்கள் போன்ற இயற்கை উপাদানங்களால் ஈர்க்கப்பட்டுள்ளன." }
             },
             3: {
                 icon: "🖌️",
                 BM: { title: "STESEN 3: CANTING & LILIN", desc: "Canting ialah alat tembaga khas bermulut halus yang digunakan untuk melukis garisan lilin cair panas di atas kain sutera atau katun. Lilin berfungsi sebagai perintang cecair warna supaya corak tidak bercampur dan kekal tajam." },
                 EN: { title: "STATION 3: CANTING & WAX", desc: "A Canting is a specialized copper tool with a fine spout used to draw liquid hot wax onto silk or cotton fabric. The wax acts as a color-resist barrier, ensuring patterns stay crisp without bleeding." },
-                CN: { title: "第 3 站：蜡斗与蜡画工艺", desc: "蜡斗是一种精密的铜质工具，带有细长喷嘴，用于在丝绸或棉布上绘制熔化的热蜡。蜡起到防染作用，确保颜色不会渗透，使图案保持清晰。" },
-                TA: { title: "நிலையம் 3: காண்டிங் & மெழுகு", desc: "காண்டிங் என்பது பட்டு அல்லது பருத்தி துணியில் சூடான மெழுகை வரைவதற்கு பயன்படும் ஒரு சிறப்பு செப்பு கருவியாகும். மெழுகு ஒரு வண்ணத் தடையாக செயல்படுகிறது." }
+                CN: { title: "第 3 站：蜡斗与蜡画工艺", desc: "蜡斗是一种精密的铜质工具，用于在丝绸或棉布上绘制熔化的热蜡。蜡起到防染作用，使图案保持清晰。" },
+                TA: { title: "நிலையம் 3: காண்டிங் & மெழுகு", desc: "காண்டிங் என்பது பட்டு அல்லது பருத்தி துணியில் சூடான மெழுகை வரைவதற்கு பயன்படும் ஒரு சிறப்பு செப்பு கருவியாகும்." }
             },
             4: {
                 icon: "🎨",
                 BM: { title: "STESEN 4: PROSES MEWARNA", desc: "Warna batik dihasilkan menggunakan berus cat dengan teknik kecunan dan ton gradasi. Selepas pewarnaan selesai, kain direndam dalam larutan Sodium Silikat untuk mengekalkan ketahanan warna sebelum direbus bagi melunturkan lilin." },
                 EN: { title: "STATION 4: COLOURING PROCESS", desc: "Batik coloring is applied using brushes with delicate shading and gradient techniques. After dyeing, the fabric is fixed with Sodium Silicate before being boiled to melt away the wax layer." },
                 CN: { title: "第 4 站：蜡染上色与固色", desc: "蜡染上色是使用画笔配合细腻的渐变过渡技巧完成的。染色后，布料用水玻璃（硅酸钠）浸泡固色，然后通过沸水煮洗脱去蜡层。" },
-                TA: { title: "நிலையம் 4: வண்ணமிடுதல் செயல்முறை", desc: "பாட்டிக் வண்ணமிடுதல் தூரிகைகளைப் பயன்படுத்தி வண்ண மாற்ற நுட்பங்களுடன் செய்யப்படுகிறது. சாயமிட்ட பிறகு, மெழுகு அடுக்கைக் கரைக்க துணி கொதிக்க வைக்கப்படுகிறது." }
+                TA: { title: "நிலையம் 4: வண்ணமிடுதல் செயல்முறை", desc: "பாட்டிக் வண்ணமிடுதல் தூரிகைகளைப் பயன்படுத்தி வண்ண மாற்ற நுட்பங்களுடன் செய்யப்படுகிறது." }
             },
             5: {
                 icon: "👔",
                 BM: { title: "STESEN 5: GALERI BATIK", desc: "Galeri memaparkan rekaan batik moden seperti kemeja rasmi, pakaian busana fesyen, serta hiasan dinding artifak. Batik Malaysia kini menjadi pakaian rasmi kebangsaan yang digayakan pada acara antarabangsa." },
                 EN: { title: "STATION 5: BATIK GALLERY", desc: "The gallery showcases modern batik creations including official shirts, haute couture fashion, and decorative wall art. Malaysian batik is now worn as official national attire at formal international events." },
                 CN: { title: "第 5 站：蜡染艺术画廊", desc: "画廊展出了现代蜡染创作，包括正装衬衫、高级时装和装饰壁画。马来西亚蜡染如今已成为国际正式场合的官方国服。" },
-                TA: { title: "நிலையம் 5: பாட்டிக் காட்சியகம்", desc: "இந்தக் காட்சியகம் அதிகாரப்பூர்வ சட்டைகள் மற்றும் ஆடை அலங்காரங்கள் உள்ளிட்ட நவீன பாட்டிக் படைப்புகளைக் காட்டுகிறது. மலேசிய பாட்டிக் சர்வதேச நிகழ்வுகளில் தேசிய ஆடையாக அணியப்படுகிறது." }
+                TA: { title: "நிலையம் 5: பாட்டிக் காட்சியகம்", desc: "இந்தக் காட்சியகம் அதிகாரப்பூர்வ சட்டைகள் மற்றும் ஆடை அலங்காரங்கள் உள்ளிட்ட நவீன பாட்டிக் படைப்புகளைக் காட்டுகிறது." }
             }
         };
 
@@ -569,6 +614,18 @@
             CN: { p4Header: "选择蜡染展馆路线", s1Title: "BATIK HERITAGE (传统历史)", s1Sub: "探索马来西亚蜡染的历史与起源", s2Title: "BATIK MOTIFS (图案图案)", s2Sub: "了解独特蜡染图案及其寓意", s3Title: "CANTING & WAX (蜡画工艺)", s3Sub: "学习如何使用蜡斗与蜡绘图", s4Title: "COLOURING BATIK (蜡染上色)", s4Sub: "一步步了解蜡染染色过程", s5Title: "BATIK GALLERY (蜡染画廊)", s5Sub: "欣赏精美传统与现代蜡染作品" },
             TA: { p4Header: "கேலரி இலக்கைத் தேர்ந்தெடுக்கவும்", s1Title: "BATIK HERITAGE (பாரம்பரியம்)", s1Sub: "பாட்டிக் கலையின் வரலாறு மற்றும் தோற்றம்", s2Title: "BATIK MOTIFS (வடிவங்கள்)", s2Sub: "தனித்துவமான பாட்டிக் வடிவங்களின் பொருள்", s3Title: "CANTING & WAX (மெழுகு வரைதல்)", s3Sub: "காண்டிங் மற்றும் மெழுகைப் பயன்படுத்தும் முறை", s4Title: "COLOURING BATIK (வண்ணமிடுதல்)", s4Sub: "பாட்டிக் வண்ணமிடும் படிகளைப் பார்க்கவும்", s5Title: "BATIK GALLERY (காட்சியகம்)", s5Sub: "பாரம்பரிய மற்றும் நவீன பாட்டிக் படைப்புகள்" }
         };
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Ralat Mod Skrin Penuh: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
 
         function goToScreen(screenNum) {
             window.speechSynthesis.cancel();
@@ -647,6 +704,14 @@
             document.getElementById('svgContainer').innerHTML = svgImages[num];
             document.getElementById('stationFullText').innerText = langContent.desc;
 
+            let webBtn = document.getElementById('externalWebBtn');
+            if(num === 1 && data.webUrl) {
+                webBtn.href = data.webUrl;
+                webBtn.style.display = 'flex';
+            } else {
+                webBtn.style.display = 'none';
+            }
+
             goToScreen(5);
             document.getElementById('screen5').classList.remove('hidden');
 
@@ -665,13 +730,13 @@
             utterance.onend = function() {
                 isSpeaking = false;
                 document.getElementById('audioBtnIcon').innerText = "🔊";
-                document.getElementById('audioBtnText').innerText = "Mainkan Suara Audio";
+                document.getElementById('audioBtnText').innerText = "Audio Penerangan";
             };
 
             window.speechSynthesis.speak(utterance);
             isSpeaking = true;
             document.getElementById('audioBtnIcon').innerText = "⏹️";
-            document.getElementById('audioBtnText').innerText = "Hentikan Suara Audio";
+            document.getElementById('audioBtnText').innerText = "Hentikan Suara";
         }
 
         function toggleAudioSpeech() {
@@ -679,11 +744,47 @@
                 window.speechSynthesis.cancel();
                 isSpeaking = false;
                 document.getElementById('audioBtnIcon').innerText = "🔊";
-                document.getElementById('audioBtnText').innerText = "Mainkan Suara Audio";
+                document.getElementById('audioBtnText').innerText = "Audio Penerangan";
             } else {
                 const data = stationDetailsData[currentStationNum];
                 const langContent = data[selectedLang] || data['BM'];
                 speakText(langContent.desc);
+            }
+        }
+
+        // FUNGSI SAMBUNGAN WEB BLUETOOTH (CHROME / EDGE WINDOWS TABLET)
+        async function connectESP32() {
+            try {
+                bleDevice = await navigator.bluetooth.requestDevice({
+                    filters: [{ name: 'BATIK_BUDDY_ESP32' }],
+                    optionalServices: ['4fafc201-1fb5-459e-8fcc-c5c9c331914b']
+                });
+
+                const server = await bleDevice.gatt.connect();
+                const service = await server.getPrimaryService('4fafc201-1fb5-459e-8fcc-c5c9c331914b');
+                bleCharacteristic = await service.getCharacteristic('beb5483e-36e1-4688-b7f5-ea07361b26a8');
+
+                await bleCharacteristic.startNotifications();
+                bleCharacteristic.addEventListener('characteristicvaluechanged', (e) => {
+                    const val = new TextDecoder().decode(e.target.value);
+                    if (val === "STATION_1") openStationDetail(1);
+                    else if (val === "STATION_2") openStationDetail(2);
+                    else if (val === "STATION_3") openStationDetail(3);
+                    else if (val === "STATION_4") openStationDetail(4);
+                    else if (val === "STATION_5") openStationDetail(5);
+                    else if (val === "WAKEUP") goToScreen(2);
+                    else if (val === "SLEEP") goToScreen(1);
+                });
+
+                document.getElementById('connTitle').innerText = "TABLET ⇄ ESP32 ROBOT";
+                document.getElementById('connDesc').innerText = "CONNECTED (BLE LIVE ACTIVE)";
+                document.getElementById('connDesc').style.color = "#00ff88";
+                document.getElementById('connLight').style.backgroundColor = "#00ff88";
+                document.getElementById('connLight').style.boxShadow = "0 0 12px #00ff88";
+                document.getElementById('connBar').style.borderColor = "#00ff88";
+
+            } catch (err) {
+                console.log("BLE Connection Cancelled or Error: " + err);
             }
         }
     </script>
